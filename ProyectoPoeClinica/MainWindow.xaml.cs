@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProyectoPoeClinica.Vistas;
 
 namespace ProyectoPoeClinica
 {
@@ -20,12 +21,26 @@ namespace ProyectoPoeClinica
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static Frame StaticMainFrame;
         public MainWindow()
         {
             InitializeComponent();
-            StaticMainFrame = MainFrame;
+        }
 
+        //Abre la vista de consultas
+        private void btnConsultas_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ListaConsultas();
+        }
+
+        //Abre la vista de especialidades
+        private void btnEspecialidades_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ListaEspecialidades();
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Home();
         }
     }
 }
