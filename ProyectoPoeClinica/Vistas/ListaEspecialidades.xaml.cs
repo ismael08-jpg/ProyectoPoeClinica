@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProyectoPoeClinica
+namespace ProyectoPoeClinica.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para ListaEspecialidades.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListaEspecialidades : Page
     {
-        public static Frame StaticMainFrame;
-        public MainWindow()
+        public ListaEspecialidades()
         {
             InitializeComponent();
-            StaticMainFrame = MainFrame;
-
         }
     }
 }

@@ -15,6 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        
+        <Frame x:Name="MainFrame" Source="Vistas/ListaEspecialidades.xaml" ></Frame>
+
     </Grid>
 </Window>
