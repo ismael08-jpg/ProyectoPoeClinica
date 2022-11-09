@@ -22,7 +22,7 @@
             <Button x:Name="btnHome" Content="Home" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnHome_Click" />
             <Button x:Name="btnCitas" Content="Citas" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnConsultas_Click"/>
             <Button x:Name="btnPacientes" Content="Pacientes" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" />
-            <Button x:Name="btnDoctores" Content="Doctores" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" />
+            <Button x:Name="btnDoctores" Content="Doctores" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnDoctores_Click" />
             <Button x:Name="btnEspecialidades" Content="Especialidades" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnEspecialidades_Click"/>
         </StackPanel>
     </Grid>

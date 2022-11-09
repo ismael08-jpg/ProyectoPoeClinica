@@ -23,6 +23,57 @@ namespace ProyectoPoeClinica.Vistas
         public ListaEspecialidades()
         {
             InitializeComponent();
+            refresh();
         }
-    }
+         private void refresh()
+        {
+            List<EspecialidadViewModel> lst = new List<EspecialidadViewModel>();
+            using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+            {
+                lst = (from p in db.Especialidad
+                       select new EspecialidadViewModel
+                       {
+                           ID_Especialidades = p.ID_Especialidades,
+                           Nombre_Espe=p.Nombre_Espe,
+
+                       }).ToList();
+            }
+            Dg.ItemsSource = lst;
+        }
+
+        public class EspecialidadViewModel
+        {
+            public int ID_Especialidades { get; set; }
+            public string Nombre_Espe { get; set; }
+        }
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            frPrincipal.Content = new FormularioEspecialidades();         
+
+        }
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿De verdad desea eliminar este registro?",
+                    "Confirmación", MessageBoxButton.YesNo,
+                    MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                int id = (int)((Button)sender).CommandParameter;
+                using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+                {
+                    var especilidades = db.Especialidad.Find(id);
+                    db.Especialidad.Remove(especilidades);
+                    db.SaveChanges();
+                }
+                refresh();
+            }
+        }
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        { 
+        int id=(int)((Button)sender).CommandParameter;
+            FormularioEspecialidades formularioEspecialidades = new FormularioEspecialidades(id);
+            MainWindow.StaticMainFrame.Content = formularioEspecialidades;
+        }
+
+
+        }
 }
