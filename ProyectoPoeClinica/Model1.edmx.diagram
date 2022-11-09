@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52f1cfa75ef74db1a358a46c24e8b4aa" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicaModel.Citas_Medicas" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Detalle_Cita" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Especialidad" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Especialidad_Medico" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Expedientes" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Medicos" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Pacientes" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Rol" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.Usuarios" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="ClinicaModel.FK_DETALLECITA_CITA" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_DETALLE_MEDICO" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_DETALLECITA_TODO" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_Medisco_Especialidad" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_Especiaildad_Medicos1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_Expediente_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_Medico_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.FK_USER_ROLES" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

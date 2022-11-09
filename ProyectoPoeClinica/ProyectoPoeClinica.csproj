@@ -71,8 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="..\..\PROYECT\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+      <Link>Login.xaml.cs</Link>
     </Compile>
     <Compile Include="Vistas\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -83,9 +84,13 @@
     <Compile Include="Vistas\ListaEspecialidades.xaml.cs">
       <DependentUpon>ListaEspecialidades.xaml</DependentUpon>
     </Compile>
-    <Page Include="Login.xaml">
+    <Compile Include="Vistas\Pacientes.xaml.cs">
+      <DependentUpon>Pacientes.xaml</DependentUpon>
+    </Compile>
+    <Page Include="..\..\PROYECT\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Link>Login.xaml</Link>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\ListaEspecialidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Pacientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +154,36 @@
     <Folder Include="Login\" />
     <Folder Include="Model\" />
     <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\LOGO ITCA-FEPADE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\Logine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\logofinLSALUD.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\istockphoto-1303119959-1024x1024 %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\CAPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\Cpt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\cpt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\logo itca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\salud.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

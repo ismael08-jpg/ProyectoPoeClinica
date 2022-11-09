@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClinicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Citas_Medicas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo_Cita" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="N_Consultorio" Type="int" Nullable="false" />
+          <Property Name="ID_Expediente" Type="int" Nullable="false" />
+          <Property Name="ID_Medico" Type="int" Nullable="false" />
+          <Property Name="Fecha_Cita" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Detalle_Cita">
+          <Key>
+            <PropertyRef Name="ID_Detalle" />
+          </Key>
+          <Property Name="ID_Detalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Cita" Type="int" Nullable="false" />
+          <Property Name="ID_Medico" Type="int" Nullable="false" />
+          <Property Name="ID_Expediente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="ID_Especialidades" />
+          </Key>
+          <Property Name="ID_Especialidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Espe" Type="varchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidad_Medico">
+          <Key>
+            <PropertyRef Name="ID_Espec_Medico" />
+          </Key>
+          <Property Name="ID_Espec_Medico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MEDICO" Type="int" Nullable="false" />
+          <Property Name="ID_ESPECIALIDAD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expedientes">
+          <Key>
+            <PropertyRef Name="ID_Expediente" />
+          </Key>
+          <Property Name="ID_Expediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Paciente" Type="int" Nullable="false" />
+          <Property Name="Afilacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Medicos">
+          <Key>
+            <PropertyRef Name="ID_Medicos" />
+          </Key>
+          <Property Name="ID_Medicos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Especialidad" Type="varchar" MaxLength="70" />
+          <Property Name="ID_usuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="ID_Pacientes" />
+          </Key>
+          <Property Name="ID_Pacientes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+          <Property Name="Dui" Type="varchar" MaxLength="10" />
+          <Property Name="Direccion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="ID_Rol" />
+          </Key>
+          <Property Name="ID_Rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo_Rol" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Apellido" Type="varchar" MaxLength="80" />
+          <Property Name="Alias" Type="varchar" MaxLength="40" />
+          <Property Name="Contra" Type="varchar" MaxLength="20" />
+          <Property Name="PUESTO" Type="varchar" MaxLength="70" />
+          <Property Name="ID_ROL" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DETALLE_MEDICO">
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos">
+              <PropertyRef Name="ID_Medicos" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Medico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLECITA_CITA">
+          <End Role="Citas_Medicas" Type="Self.Citas_Medicas" Multiplicity="1" />
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citas_Medicas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLECITA_TODO">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="ID_Expediente" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Expediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Especiaildad_Medicos1">
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="1" />
+          <End Role="Especialidad_Medico" Type="Self.Especialidad_Medico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos">
+              <PropertyRef Name="ID_Medicos" />
+            </Principal>
+            <Dependent Role="Especialidad_Medico">
+              <PropertyRef Name="ID_MEDICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expediente_Paciente">
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="ID_Pacientes" />
+            </Principal>
+            <Dependent Role="Expedientes">
+              <PropertyRef Name="ID_Paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medico_User">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="Medicos">
+              <PropertyRef Name="ID_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medisco_Especialidad">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1" />
+          <End Role="Especialidad_Medico" Type="Self.Especialidad_Medico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="ID_Especialidades" />
+            </Principal>
+            <Dependent Role="Especialidad_Medico">
+              <PropertyRef Name="ID_ESPECIALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROLES">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicaModelStoreContainer">
+          <EntitySet Name="Citas_Medicas" EntityType="Self.Citas_Medicas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalle_Cita" EntityType="Self.Detalle_Cita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidad_Medico" EntityType="Self.Especialidad_Medico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expedientes" EntityType="Self.Expedientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicos" EntityType="Self.Medicos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DETALLE_MEDICO" Association="Self.FK_DETALLE_MEDICO">
+            <End Role="Medicos" EntitySet="Medicos" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLECITA_CITA" Association="Self.FK_DETALLECITA_CITA">
+            <End Role="Citas_Medicas" EntitySet="Citas_Medicas" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLECITA_TODO" Association="Self.FK_DETALLECITA_TODO">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Especiaildad_Medicos1" Association="Self.FK_Especiaildad_Medicos1">
+            <End Role="Medicos" EntitySet="Medicos" />
+            <End Role="Especialidad_Medico" EntitySet="Especialidad_Medico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expediente_Paciente" Association="Self.FK_Expediente_Paciente">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Expedientes" EntitySet="Expedientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medico_User" Association="Self.FK_Medico_User">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Medicos" EntitySet="Medicos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medisco_Especialidad" Association="Self.FK_Medisco_Especialidad">
+            <End Role="Especialidad" EntitySet="Especialidad" />
+            <End Role="Especialidad_Medico" EntitySet="Especialidad_Medico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLES" Association="Self.FK_USER_ROLES">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClinicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Citas_Medicas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_Cita" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="N_Consultorio" Type="Int32" Nullable="false" />
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" />
+          <Property Name="ID_Medico" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Cita" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Detalle_Cita" Relationship="Self.FK_DETALLECITA_CITA" FromRole="Citas_Medicas" ToRole="Detalle_Cita" />
+        </EntityType>
+        <EntityType Name="Detalle_Cita">
+          <Key>
+            <PropertyRef Name="ID_Detalle" />
+          </Key>
+          <Property Name="ID_Detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Cita" Type="Int32" Nullable="false" />
+          <Property Name="ID_Medico" Type="Int32" Nullable="false" />
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Citas_Medicas" Relationship="Self.FK_DETALLECITA_CITA" FromRole="Detalle_Cita" ToRole="Citas_Medicas" />
+          <NavigationProperty Name="Medicos" Relationship="Self.FK_DETALLE_MEDICO" FromRole="Detalle_Cita" ToRole="Medicos" />
+          <NavigationProperty Name="Expedientes" Relationship="Self.FK_DETALLECITA_TODO" FromRole="Detalle_Cita" ToRole="Expedientes" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="ID_Especialidades" />
+          </Key>
+          <Property Name="ID_Especialidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Espe" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Especialidad_Medico" Relationship="Self.FK_Medisco_Especialidad" FromRole="Especialidad" ToRole="Especialidad_Medico" />
+        </EntityType>
+        <EntityType Name="Especialidad_Medico">
+          <Key>
+            <PropertyRef Name="ID_Espec_Medico" />
+          </Key>
+          <Property Name="ID_Espec_Medico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MEDICO" Type="Int32" Nullable="false" />
+          <Property Name="ID_ESPECIALIDAD" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Especialidad" Relationship="Self.FK_Medisco_Especialidad" FromRole="Especialidad_Medico" ToRole="Especialidad" />
+          <NavigationProperty Name="Medicos" Relationship="Self.FK_Especiaildad_Medicos1" FromRole="Especialidad_Medico" ToRole="Medicos" />
+        </EntityType>
+        <EntityType Name="Expedientes">
+          <Key>
+            <PropertyRef Name="ID_Expediente" />
+          </Key>
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Paciente" Type="Int32" Nullable="false" />
+          <Property Name="Afilacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Detalle_Cita" Relationship="Self.FK_DETALLECITA_TODO" FromRole="Expedientes" ToRole="Detalle_Cita" />
+          <NavigationProperty Name="Pacientes" Relationship="Self.FK_Expediente_Paciente" FromRole="Expedientes" ToRole="Pacientes" />
+        </EntityType>
+        <EntityType Name="Medicos">
+          <Key>
+            <PropertyRef Name="ID_Medicos" />
+          </Key>
+          <Property Name="ID_Medicos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Especialidad" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ID_usuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Detalle_Cita" Relationship="Self.FK_DETALLE_MEDICO" FromRole="Medicos" ToRole="Detalle_Cita" />
+          <NavigationProperty Name="Especialidad_Medico" Relationship="Self.FK_Especiaildad_Medicos1" FromRole="Medicos" ToRole="Especialidad_Medico" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Medico_User" FromRole="Medicos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="ID_Pacientes" />
+          </Key>
+          <Property Name="ID_Pacientes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Edad" Type="Int32" Nullable="false" />
+          <Property Name="Dui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Expedientes" Relationship="Self.FK_Expediente_Paciente" FromRole="Pacientes" ToRole="Expedientes" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="ID_Rol" />
+          </Key>
+          <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_Rol" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_USER_ROLES" FromRole="Rol" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Apellido" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Alias" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Contra" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PUESTO" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ID_ROL" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medicos" Relationship="Self.FK_Medico_User" FromRole="Usuarios" ToRole="Medicos" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_USER_ROLES" FromRole="Usuarios" ToRole="Rol" />
+        </EntityType>
+        <Association Name="FK_DETALLECITA_CITA">
+          <End Role="Citas_Medicas" Type="Self.Citas_Medicas" Multiplicity="1" />
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citas_Medicas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLE_MEDICO">
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos">
+              <PropertyRef Name="ID_Medicos" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Medico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLECITA_TODO">
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+          <End Role="Detalle_Cita" Type="Self.Detalle_Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expedientes">
+              <PropertyRef Name="ID_Expediente" />
+            </Principal>
+            <Dependent Role="Detalle_Cita">
+              <PropertyRef Name="ID_Expediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medisco_Especialidad">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1" />
+          <End Role="Especialidad_Medico" Type="Self.Especialidad_Medico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="ID_Especialidades" />
+            </Principal>
+            <Dependent Role="Especialidad_Medico">
+              <PropertyRef Name="ID_ESPECIALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Especiaildad_Medicos1">
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="1" />
+          <End Role="Especialidad_Medico" Type="Self.Especialidad_Medico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos">
+              <PropertyRef Name="ID_Medicos" />
+            </Principal>
+            <Dependent Role="Especialidad_Medico">
+              <PropertyRef Name="ID_MEDICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expediente_Paciente">
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="ID_Pacientes" />
+            </Principal>
+            <Dependent Role="Expedientes">
+              <PropertyRef Name="ID_Paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medico_User">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Medicos" Type="Self.Medicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="Medicos">
+              <PropertyRef Name="ID_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROLES">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="ID_Rol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Citas_Medicas" EntityType="Self.Citas_Medicas" />
+          <EntitySet Name="Detalle_Cita" EntityType="Self.Detalle_Cita" />
+          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" />
+          <EntitySet Name="Especialidad_Medico" EntityType="Self.Especialidad_Medico" />
+          <EntitySet Name="Expedientes" EntityType="Self.Expedientes" />
+          <EntitySet Name="Medicos" EntityType="Self.Medicos" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_DETALLECITA_CITA" Association="Self.FK_DETALLECITA_CITA">
+            <End Role="Citas_Medicas" EntitySet="Citas_Medicas" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLE_MEDICO" Association="Self.FK_DETALLE_MEDICO">
+            <End Role="Medicos" EntitySet="Medicos" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLECITA_TODO" Association="Self.FK_DETALLECITA_TODO">
+            <End Role="Expedientes" EntitySet="Expedientes" />
+            <End Role="Detalle_Cita" EntitySet="Detalle_Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medisco_Especialidad" Association="Self.FK_Medisco_Especialidad">
+            <End Role="Especialidad" EntitySet="Especialidad" />
+            <End Role="Especialidad_Medico" EntitySet="Especialidad_Medico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Especiaildad_Medicos1" Association="Self.FK_Especiaildad_Medicos1">
+            <End Role="Medicos" EntitySet="Medicos" />
+            <End Role="Especialidad_Medico" EntitySet="Especialidad_Medico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expediente_Paciente" Association="Self.FK_Expediente_Paciente">
+            <End Role="Pacientes" EntitySet="Pacientes" />
+            <End Role="Expedientes" EntitySet="Expedientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medico_User" Association="Self.FK_Medico_User">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Medicos" EntitySet="Medicos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROLES" Association="Self.FK_USER_ROLES">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClinicaModelStoreContainer" CdmEntityContainer="ClinicaEntities">
+          <EntitySetMapping Name="Citas_Medicas">
+            <EntityTypeMapping TypeName="ClinicaModel.Citas_Medicas">
+              <MappingFragment StoreEntitySet="Citas_Medicas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tipo_Cita" ColumnName="Tipo_Cita" />
+                <ScalarProperty Name="N_Consultorio" ColumnName="N_Consultorio" />
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+                <ScalarProperty Name="ID_Medico" ColumnName="ID_Medico" />
+                <ScalarProperty Name="Fecha_Cita" ColumnName="Fecha_Cita" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detalle_Cita">
+            <EntityTypeMapping TypeName="ClinicaModel.Detalle_Cita">
+              <MappingFragment StoreEntitySet="Detalle_Cita">
+                <ScalarProperty Name="ID_Detalle" ColumnName="ID_Detalle" />
+                <ScalarProperty Name="ID_Cita" ColumnName="ID_Cita" />
+                <ScalarProperty Name="ID_Medico" ColumnName="ID_Medico" />
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidad">
+            <EntityTypeMapping TypeName="ClinicaModel.Especialidad">
+              <MappingFragment StoreEntitySet="Especialidad">
+                <ScalarProperty Name="ID_Especialidades" ColumnName="ID_Especialidades" />
+                <ScalarProperty Name="Nombre_Espe" ColumnName="Nombre_Espe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidad_Medico">
+            <EntityTypeMapping TypeName="ClinicaModel.Especialidad_Medico">
+              <MappingFragment StoreEntitySet="Especialidad_Medico">
+                <ScalarProperty Name="ID_Espec_Medico" ColumnName="ID_Espec_Medico" />
+                <ScalarProperty Name="ID_MEDICO" ColumnName="ID_MEDICO" />
+                <ScalarProperty Name="ID_ESPECIALIDAD" ColumnName="ID_ESPECIALIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expedientes">
+            <EntityTypeMapping TypeName="ClinicaModel.Expedientes">
+              <MappingFragment StoreEntitySet="Expedientes">
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+                <ScalarProperty Name="ID_Paciente" ColumnName="ID_Paciente" />
+                <ScalarProperty Name="Afilacion" ColumnName="Afilacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicos">
+            <EntityTypeMapping TypeName="ClinicaModel.Medicos">
+              <MappingFragment StoreEntitySet="Medicos">
+                <ScalarProperty Name="ID_Medicos" ColumnName="ID_Medicos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+                <ScalarProperty Name="ID_usuario" ColumnName="ID_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacientes">
+            <EntityTypeMapping TypeName="ClinicaModel.Pacientes">
+              <MappingFragment StoreEntitySet="Pacientes">
+                <ScalarProperty Name="ID_Pacientes" ColumnName="ID_Pacientes" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Dui" ColumnName="Dui" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="ClinicaModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+                <ScalarProperty Name="Tipo_Rol" ColumnName="Tipo_Rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ClinicaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="ClinicaModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="Nombre_Apellido" ColumnName="Nombre_Apellido" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Contra" ColumnName="Contra" />
+                <ScalarProperty Name="PUESTO" ColumnName="PUESTO" />
+                <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
