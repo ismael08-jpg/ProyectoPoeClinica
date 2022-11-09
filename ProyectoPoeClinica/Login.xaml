@@ -3,10 +3,80 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+  
         xmlns:local="clr-namespace:ProyectoPoeClinica"
         mc:Ignorable="d"
+        
         Title="Login" Height="450" Width="800">
     <Grid>
-        
+        <!--Divicion de Columnas-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--Columna 2-->
+        <Grid>
+            <Rectangle x:Name="ClomnRectgle1"  HorizontalAlignment="Left" Height="446" Margin="398,-27,-398,0" Stroke="Black" VerticalAlignment="Top" Width="396">
+                <Rectangle.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF2281D1" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+        </Grid>
+
+
+        <!--Columna 1-->
+        <Grid>
+            <Rectangle x:Name="ClomnRectgle2" Height="444" VerticalAlignment="Top" Margin="393,-25,-405,0" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF34268A" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle Height="280" VerticalAlignment="Top" Margin="-3,-25,0,0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF33288B" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+
+            <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,120" RadiusX="10" RadiusY="10" >
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Color="#FFBBBBBB" Direction="0" RenderingBias="Quality" ShadowDepth="1"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+            <!--Contenedor del Rectagle -->
+            <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100" >
+                <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40" 
+                   Foreground="Gray" FontSize="19" FontWeight="Bold"/>
+                <StackPanel VerticalAlignment="Center" Margin="15">
+                    <TextBox Name="TxbxAlias" Margin="0,10" FontSize="18" FontFamily="Champagne &amp; Limousines"   materialDesign:HintAssist.Hint="Usuario"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <PasswordBox Name="TxbxContra"  Margin="0,10" FontSize="18"  FontFamily="Champagne &amp; Limousines" materialDesign:HintAssist.Hint="Contraseña"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                </StackPanel>
+
+            </Grid>
+            <Button x:Name="btnIngresar" Content="Ingresar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,123,51" Click="btnIngresar_Click"/>
+            <TextBlock Text="¿Olvidó su contraseña?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,141,19" Foreground="Gray" Cursor="Hand"/>
+            <Image Margin="157,10,149,326" Source="Imagen/login.png" Stretch="Fill"/>
+        </Grid>
+        <Image Grid.Column="1" Margin="43,112,39,239" Source="Imagen/LOGO ITCA-FEPADE.png" Stretch="Fill"/>
+
     </Grid>
 </Window>

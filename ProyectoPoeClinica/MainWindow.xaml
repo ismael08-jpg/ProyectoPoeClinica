@@ -16,14 +16,21 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        <Frame x:Name="MainFrame" Source="Vistas/ListaEspecialidades.xaml" Margin="200,0,0,0" ></Frame>
-        
+        <Frame x:Name="MainFrame" Source="Vistas/ListaEspecialidades.xaml" Margin="200,0,0,0" Content="" ></Frame>
         <StackPanel Width="200" HorizontalAlignment="Left">
+            <Button x:Name="btnCitas" Content="Citas" HorizontalAlignment="Left" Margin="0,2"  VerticalAlignment="Top" Width="200" Click="btnConsultas_Click"/>
             <Button x:Name="btnHome" Content="Home" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnHome_Click" />
-            <Button x:Name="btnCitas" Content="Citas" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnConsultas_Click"/>
             <Button x:Name="btnPacientes" Content="Pacientes" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" />
             <Button x:Name="btnDoctores" Content="Doctores" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" />
             <Button x:Name="btnEspecialidades" Content="Especialidades" HorizontalAlignment="Left" Margin="0,10"  VerticalAlignment="Top" Width="200" Click="btnEspecialidades_Click"/>
         </StackPanel>
+
+        <Image Source="Imagen/istockphoto-1303119959-1024x1024 (3).jpg" Stretch="Fill" HorizontalAlignment="Left" Width="200" Margin="0,236,0,0"/>
+        <Image HorizontalAlignment="Left" Height="104" Margin="439,604,0,0" VerticalAlignment="Top" Width="130"/>
+        <Image Height="26" Margin="0,180,0,0" Source="Imagen/CAPT.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+        <Image Height="28" Margin="0,126,0,0" Source="Imagen/cpt3.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+        <Image Height="28" Margin="0,71,0,0" Source="Imagen/Cpt2.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+        <Image Height="28" Margin="0,71,0,0" Source="Imagen/Cpt2.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+        <Image Height="15" Margin="0,33,0,0" Source="Imagen/cpt3.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
     </Grid>
 </Window>
