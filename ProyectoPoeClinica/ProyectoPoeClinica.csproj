@@ -73,9 +73,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="..\..\PROYECT\Login.xaml.cs">
+    <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
-      <Link>Login.xaml.cs</Link>
     </Compile>
     <Compile Include="Model\Citas_Medicas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -140,10 +139,9 @@
     <Compile Include="Vistas\Pacientes.xaml.cs">
       <DependentUpon>Pacientes.xaml</DependentUpon>
     </Compile>
-    <Page Include="..\..\PROYECT\Login.xaml">
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <Link>Login.xaml</Link>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
