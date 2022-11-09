@@ -72,11 +72,11 @@
                 </StackPanel>
 
             </Grid>
-            <Button x:Name="btnIngresar" Content="Ingresar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,123,51" Click="btnIngresar_Click"/>
+            <Button x:Name="BtnIngresar" Content="Ingresar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,123,51" Click="btnIngresar_Click"/>
             <TextBlock Text="¿Olvidó su contraseña?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,141,19" Foreground="Gray" Cursor="Hand"/>
-            <Image Margin="157,10,149,326" Source="Imagen/login.png" Stretch="Fill"/>
+            <Image Margin="157,0,123,0" Source="/ProyectoPoeClinica;component/Imagen/login.png" Stretch="Fill" Height="93" VerticalAlignment="Top"/>
         </Grid>
-        <Image Grid.Column="1" Margin="43,112,39,239" Source="Imagen/LOGO ITCA-FEPADE.png" Stretch="Fill"/>
+        <Image Grid.Column="1" Margin="81,93,89,136" Source="/ProyectoPoeClinica;component/Imagen/logofinLSALUD.PNG" Stretch="Fill"/>
 
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace ProyectoPoeClinica
 {
     /// <summary>
@@ -22,6 +23,18 @@ namespace ProyectoPoeClinica
         public Login()
         {
             InitializeComponent();
+        }
+
+
+        //Inision de Secion
+        private void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            // Instancia hacia Ventana Principal
+            MainWindow vp = new MainWindow();
+            //Mostrando Vnetana Principal
+            vp.Show();
+            //Ocultando Ventana Loging
+            this.Hide();
         }
     }
 }
