@@ -24,7 +24,7 @@ namespace ProyectoPoeClinica
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Home();
+            //MainFrame.Content = new Home();
         }
 
         //Abre la vista de consultas

@@ -190,13 +190,13 @@
     <Resource Include="Imagen\LOGOFARMACIA.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagen\LOGOFINAL.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagen\ficha.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagen\cardio.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagen\LOGOFINAL.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
