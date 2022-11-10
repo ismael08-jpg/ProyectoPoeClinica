@@ -76,7 +76,7 @@
             <TextBlock Text="¿Olvidó su contraseña?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="123,0,141,19" Foreground="Gray" Cursor="Hand"/>
             <Image Margin="157,0,123,0" Source="/ProyectoPoeClinica;component/Imagen/login.png" Stretch="Fill" Height="93" VerticalAlignment="Top"/>
         </Grid>
-        <Image Grid.Column="1" Margin="81,93,89,136" Source="/ProyectoPoeClinica;component/Imagen/logofinLSALUD.PNG" Stretch="Fill"/>
+        <Image Grid.Column="1" Margin="75,137,47,154" Source="Imagen/LOGOFINAL.PNG" Stretch="Fill"/>
 
     </Grid>
 </Window>
