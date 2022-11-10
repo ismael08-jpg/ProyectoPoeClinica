@@ -13,13 +13,13 @@
 
     <Grid>
 
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="1000">
+        <GroupBox Header="Expediente Paciente" HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="1000">
             <Grid>
-                <TextBox HorizontalAlignment="Left" Height="34" Margin="60,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
-                <TextBox HorizontalAlignment="Left" Height="34" Margin="286,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
-                <TextBox HorizontalAlignment="Left" Height="34" Margin="511,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
-                <TextBox HorizontalAlignment="Left" Height="34" Margin="60,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="419" Background="#FF98E3FF" CaretBrush="#FF595E93"/>
-                <TextBox HorizontalAlignment="Left" Height="34" Margin="536,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Background="#FF98E3FF"/>
+                <TextBox   x:Name="TxbxNombres" HorizontalAlignment="Left" Height="34" Margin="60,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
+                <TextBox  x:Name="TxbxApellidos" HorizontalAlignment="Left" Height="34" Margin="286,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
+                <TextBox  x:Name="TxbxDui"  HorizontalAlignment="Left" Height="34" Margin="511,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="#FF98E3FF"/>
+                <TextBox  x:Name="TxbxDireccion"  HorizontalAlignment="Left" Height="34" Margin="60,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="419" Background="#FF98E3FF" CaretBrush="#FF595E93"/>
+                <TextBox   x:Name="TxbxEdad" HorizontalAlignment="Left" Height="34" Margin="536,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Background="#FF98E3FF"/>
 
                 <Label Content="Nombre: " HorizontalAlignment="Left" Margin="60,28,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
                 <Label Content="Apellido: " HorizontalAlignment="Left" Margin="286,28,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
@@ -37,15 +37,39 @@
         <Grid>
         <Label Content="Fecha Afiliacion: " HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="1.722,0.517" Margin="780,192,0,0"/>
         <Image HorizontalAlignment="Left" Height="136" Margin="796,51,0,0" VerticalAlignment="Top" Width="148" Source="/ProyectoPoeClinica;component/Imagen/ficha.png"/>
-        <DatePicker HorizontalAlignment="Left" Margin="780,226,0,0" VerticalAlignment="Top" Width="182" Height="31" Background="#FF98E3FF"/>
+        <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="780,226,0,0" VerticalAlignment="Top" Width="182" Height="31" Background="#FF98E3FF"/>
         <Image HorizontalAlignment="Left" Height="49" Margin="0,294,0,0" VerticalAlignment="Top" Width="1000" Source="/ProyectoPoeClinica;component/Imagen/cardio.PNG" Stretch="Fill"/>
-        <Button Content="Afiliar" HorizontalAlignment="Left" Margin="740,289,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="2.533,0.656" Height="38"/>
-        <DataGrid HorizontalAlignment="Left" Height="357" Margin="44,413,0,0" VerticalAlignment="Top" Width="918"/>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="82,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416"  materialDesign:HintAssist.Hint="Buscar Paciente" />
+            <Button Content="Afiliar" HorizontalAlignment="Left" Margin="740,289,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="2.533,0.656" Height="38"/>
+            <TextBox HorizontalAlignment="Left" Height="31" Margin="82,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416"  materialDesign:HintAssist.Hint="Buscar Paciente" />
             <Button Content="Imprimir" HorizontalAlignment="Left" Margin="740,369,0,0" VerticalAlignment="Top" Width="102"/>
         </Grid>
 
+        <Grid >
 
+            <DataGrid  x:Name="DTG" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0" HorizontalAlignment="Left" Height="357" Margin="44,413,0,0" VerticalAlignment="Top" Width="918" SelectionUnit="FullRow" MouseDoubleClick="DGT_MouseDoubleClick">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="        Apellidos" Binding="{Binding Apellidos}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="        Dui" Binding="{Binding Dui}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="        Direccion" Binding="{Binding Direccion}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="       Edad" Binding="{Binding Edad}"></DataGridTextColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Button CommandParameter="{Binding idPropietario}" Click="Button_Click_1">EDITAR</Button>
+                                    <Button CommandParameter="{Binding idPropietario}" Click="Button_Click_2">Eliminar</Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Grid>
 
 
 
