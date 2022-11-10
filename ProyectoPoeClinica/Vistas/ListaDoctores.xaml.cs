@@ -29,17 +29,14 @@ namespace ProyectoPoeClinica.Vistas
         private void refresh()
         {
             List<DoctorViewModel> lst = new List<DoctorViewModel>();
-            using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+            using (Model.ClinicaEntities db = new Model.ClinicaEntities())
             {
                 lst = (from p in db.Medicos
                        select new DoctorViewModel
                        {
-                           ID_Medicos=p.ID_Medicos,
+                           ID_Medicos=p.ID,
                            
-                           Nombre=p.Nombre,
-                           Apellido=p.Apellido,
-                           Especialidad=p.Especialidad,
-                           
+                         
 
                        }).ToList();
             }
