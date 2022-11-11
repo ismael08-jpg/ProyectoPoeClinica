@@ -60,8 +60,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button CommandParameter="{Binding idPropietario}" Click="Button_Click_1">EDITAR</Button>
-                                    <Button CommandParameter="{Binding idPropietario}" Click="Button_Click_2">Eliminar</Button>
+                                    <Button CommandParameter="{Binding idPropietario}">EDITAR</Button>
+                                    <Button CommandParameter="{Binding idPropietario}">Eliminar</Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

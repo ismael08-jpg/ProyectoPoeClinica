@@ -49,7 +49,7 @@ namespace ProyectoPoeClinica.Vistas
             // Instancia hacia obejeto que ese caso es Clase
             List<PacientesView> lst = new List<PacientesView>();
 
-            using (Model.ClinicaEntities2 DBs = new Model.ClinicaEntities2())
+            using (Model.ClinicaEntities DBs = new Model.ClinicaEntities())
             {
                 lst = (from d in DBs.Pacientes
                        select new PacientesView
