@@ -16,37 +16,7 @@
         </StackPanel>
         <Grid Width="auto" VerticalAlignment="Top" Margin="10,96,224,0">
             <DataGrid Name="Dg" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,-74,-10">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Doctor" Binding="{Binding ID_Medicos}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="ID Usuario" Binding="{Binding ID_}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Nombre " Binding="{Binding Nombre}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Especialidad" Binding="{Binding Especialidad}" ></DataGridTextColumn>
-                    
-                    
-                    
-
-
-                    <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                   
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
+                
             </DataGrid>
         </Grid>
         <Frame  

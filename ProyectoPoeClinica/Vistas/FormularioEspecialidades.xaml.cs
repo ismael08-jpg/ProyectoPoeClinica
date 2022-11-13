@@ -21,7 +21,7 @@ namespace ProyectoPoeClinica.Vistas
     public partial class FormularioEspecialidades : Page
     {
         public int id = 0;
-        public int ID_Especialidades;
+        public int ID;
         
         public FormularioEspecialidades(int id=0)
         {
@@ -32,7 +32,7 @@ namespace ProyectoPoeClinica.Vistas
                 using(Model.ClinicaEntities db= new Model.ClinicaEntities())
                 {
                     var especialidades = db.Especialidad.Find(this.id);
-                    txtIdEspecialidad.Text = especialidades.ID.ToString();
+                    
                     txtNombreEspecialidad.Text = especialidades.Nombre_Especialidad.ToString();
                 }
             }
@@ -45,7 +45,7 @@ namespace ProyectoPoeClinica.Vistas
                 using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                 {
                     var especialidad = id == 0 ? new Model.Especialidad() : db.Especialidad.Find(id);
-                    especialidad.ID = int.Parse(txtIdEspecialidad.Text);
+                    
                     especialidad.Nombre_Especialidad = txtNombreEspecialidad.Text;
 
                     db.Especialidad.Add(especialidad);
@@ -59,7 +59,7 @@ namespace ProyectoPoeClinica.Vistas
                 {
 
                     var especialidad = id == 0 ? new Model.Especialidad() : db.Especialidad.Find(id);
-                    especialidad.ID = int.Parse(txtIdEspecialidad.Text);
+                    
                     especialidad.Nombre_Especialidad = txtNombreEspecialidad.Text;
 
                     db.Entry(especialidad).State = System.Data.Entity.EntityState.Modified;

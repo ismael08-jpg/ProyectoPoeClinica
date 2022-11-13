@@ -12,14 +12,7 @@
     <Grid Background="#FFF9EEEE" Margin="0,-23,0,0">
         <Label  Content="Ingrese los datos solicitados" Margin="198,10,133,169" FontWeight="Bold" FontSize="20"/>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="center" Height="auto" Margin="45,27,45,21">
-            <TextBox  Name="txtIdEspecialidad" 
-                              Margin="0,50,0,73"
-                              FontFamily="Arial Black"
-                              FontSize="18" 
-                              materialDesign:HintAssist.Hint="ID de especialidad"
-                              Width="250" Height="80"
-                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontWeight="Bold" Background="#FFF3F9F9" 
-                              ></TextBox>
+            
             
             <TextBox  Name="txtNombreEspecialidad" 
                               Margin="10,50,0,73"

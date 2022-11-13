@@ -20,7 +20,7 @@
         <Grid Width="auto" VerticalAlignment="Top" Margin="10,96,224,0">
             <DataGrid Name="Dg" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,-27,-10">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Especialidades" Binding="{Binding ID_Especialidades}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="ID Especialidades" Binding="{Binding ID}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Nombre Especialidad" Binding="{Binding Nombre_Espe}" ></DataGridTextColumn>
 
 
@@ -28,7 +28,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button CommandParameter="{Binding ID_Especialidades}" 
+                                    <Button CommandParameter="{Binding ID}" 
                                         Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                                         Name="btnEliminar" 
                                         Click="btnEliminar_Click" 
@@ -44,7 +44,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button CommandParameter="{Binding ID_Especialidades}" 
+                                    <Button CommandParameter="{Binding ID}" 
                                         Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                                         Name="btnEditar" 
                                         Click="btnEditar_Click" 
