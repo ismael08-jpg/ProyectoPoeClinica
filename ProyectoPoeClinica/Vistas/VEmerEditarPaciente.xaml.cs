@@ -24,6 +24,7 @@ namespace ProyectoPoeClinica.Vistas
         {
             InitializeComponent();
             ETxbxIDPaciente.IsEnabled = false;
+            DataEdition.IsEnabled = false;
         }
 
         // Variables Utilizar Obtencion de Variables a Editar
