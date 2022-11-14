@@ -20,8 +20,20 @@ namespace ProyectoPoeClinica.Clases
 
      public String Direccion { get; set; }
 
-     public DateTime Fecha {get; set;}
-
      public int Edad { get; set; }
+
+        
     }
+
+
+    class ExpedienteView
+    {
+    public int IDExpediente { get; set; }
+
+    public DateTime FechaAfiliacion { get; set; }
+
+    }
+
+
+
 }

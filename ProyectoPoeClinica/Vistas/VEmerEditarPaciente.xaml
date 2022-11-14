@@ -1,0 +1,37 @@
+﻿<Page x:Class="ProyectoPoeClinica.Vistas.VEmerEditarPaciente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoPoeClinica.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="980"
+      Title="VEmerEditarPaciente">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="980" Source="/ProyectoPoeClinica;component/Imagen/EDITAR.jpg" Stretch="Fill" Grid.RowSpan="2" Margin="0,0,0,-50"/>
+        <Label Content="EXPEDIENTE PACIENTES" HorizontalAlignment="Left" Margin="351,29,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Fecha Afiliacion:" HorizontalAlignment="Left" Margin="561,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.927,0.919" FontWeight="Bold"/>
+        <Label Content="Nombres:" HorizontalAlignment="Left" Margin="65,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,4.925" FontWeight="Bold"/>
+        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="64,285,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Dui:" HorizontalAlignment="Left" Margin="73,25,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.418,1.361" FontWeight="Bold"/>
+        <Label Content="Direccion:" HorizontalAlignment="Left" Margin="65,121,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.563,1.791" FontWeight="Bold"/>
+        <Label Content="Edad:" HorizontalAlignment="Left" Margin="73,207,0,0" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.563,1.791" FontWeight="Bold"/>
+        <Label Content="ID PACIENTE:" HorizontalAlignment="Left" Margin="800,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.563,1.791" FontWeight="Bold"/>
+        <TextBox x:Name="ETxbxNombres" HorizontalAlignment="Left" Height="32" Margin="177,192,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="257" Background="CadetBlue"/>
+        <TextBox x:Name="ETxbxApellidos" HorizontalAlignment="Left" Height="32" Margin="177,278,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="257" Background="CadetBlue"/>
+        <TextBox x:Name="ETxbxDui" HorizontalAlignment="Left" Height="32" Margin="177,25,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="257" Background="CadetBlue" Grid.Row="1"/>
+        <TextBox x:Name="ETxbxDireccion" HorizontalAlignment="Left" Height="32" Margin="177,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="257" Background="CadetBlue" Grid.Row="1"/>
+        <TextBox x:Name="ETxbxEdad" HorizontalAlignment="Left" Height="32" Margin="177,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="257" Background="CadetBlue" Grid.Row="1"/>
+        <DatePicker x:Name="DataEdition" HorizontalAlignment="Left" Margin="561,192,0,0" VerticalAlignment="Top" Width="187" Height="30" Background="CadetBlue"/>
+        <TextBox x:Name="ETxbxIDPaciente" HorizontalAlignment="Left" Height="32" Margin="800,192,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" Background="CadetBlue"/>
+        <Button x:Name="EBtnAztualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="313,325,0,0" VerticalAlignment="Top" Width="103" Height="32" Grid.Row="1" Click="EBtnAztualizar_Click"/>
+        <Button x:Name="EBtnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="496,325,0,0" VerticalAlignment="Top" Width="92" Grid.Row="1" Click="EBtnCancelar_Click"/>
+        <Image HorizontalAlignment="Left" Height="235" Margin="703,114,0,0" Grid.Row="1" VerticalAlignment="Top" Width="259" Source="/ProyectoPoeClinica;component/Imagen/LOGOFINAL.PNG"/>
+
+    </Grid>
+</Page>
