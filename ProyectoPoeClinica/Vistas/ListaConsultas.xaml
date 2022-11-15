@@ -40,7 +40,7 @@
                                         Name="btnEliminar" 
                                         Foreground="White" 
                                         Background="#FFD22444" 
-                                        BorderBrush="#FF6F1D1D">Eliminar</Button>
+                                        BorderBrush="#FF6F1D1D" Click="btnEliminar_Click">Eliminar</Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -51,10 +51,11 @@
                             <DataTemplate>
                                 <StackPanel>
                                     <Button CommandParameter="{Binding ID}" 
-                                        Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                                            
                                         Name="btnEditar" 
                                         Background="#FFE6B634" 
-                                        BorderBrush="#FFB98907">Editar</Button>
+                                        BorderBrush="#FFB98907" Click="btnEditar_Click">Editar</Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

@@ -59,5 +59,32 @@ namespace ProyectoPoeClinica.Vistas
         {
             MainWindow.StaticMainFrame.Content = new SeleccionarPaciente();
         }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            int id = (int)((Button)sender).CommandParameter;
+            FrmCita formulario = new FrmCita(id);
+            MainWindow.StaticMainFrame.Content = formulario;
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿De verdad desea eliminar este registro?",
+                "Confirmación", MessageBoxButton.YesNo,
+                MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                int id = (int)((Button)sender).CommandParameter;
+
+                using (Model.ClinicaEntities db = new Model.ClinicaEntities())
+                {
+                    var propietario = db.Cita.Find(id);
+
+                    db.Cita.Remove(propietario);
+                    db.SaveChanges();
+                }
+                refresh();
+            }
+        }
     }
 }

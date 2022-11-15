@@ -41,32 +41,14 @@
             </DataGrid>
 
             <StackPanel Margin="0,230,0,-55" Height="70" Orientation="Horizontal" HorizontalAlignment="Right">
-                <StackPanel Orientation="Vertical">
-                    <TextBox  x:Name="TxtDoctor"
-                        Width="300"
-                          Margin="5,2"
-                        Height="40"
-                        FontFamily="Champagne &amp; Limousines"
-                        FontSize="14" 
-                        materialDesign:HintAssist.Hint="Doctor seleccionado"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                    </TextBox>
-                    <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" 
-                               Margin="5,0" 
-                               Name="errorTxtDoctor" 
-                               FontSize="12" 
-                               Foreground="Red"></TextBlock>
-                    
-                </StackPanel>
-                
                 <Button
-                    CommandParameter="{Binding id_doctor_global}" 
+              
                     Width="200"
                     Style="{StaticResource MaterialDesignRaisedAccentButton}" 
                     Name="btnSeleccionar"
                     Margin="5,2"
-                    Background="#FFE6B634" 
-                    BorderBrush="#FFB98907" >Hecho</Button>
+                    Background="#FFE64C34" 
+                    BorderBrush="#FFB98907" Foreground="#DD000000" >Cancelar</Button>
             </StackPanel>
             
         </Grid>

@@ -29,7 +29,6 @@ namespace ProyectoPoeClinica.Vistas
         public SeleccionarDoctorCita()
         {
             InitializeComponent();
-            btnSeleccionar.Click += new RoutedEventHandler(FrmCita.PasarDatos);
             refresh();
         }
 
@@ -81,12 +80,12 @@ namespace ProyectoPoeClinica.Vistas
                 });
             }
 
-            //TxtDoctor.Text = user.nombres + " " + user.apellidos;
+            this.Close();
+        }
 
-            //btnSeleccionar.CommandParameter = user;
-
-            
-            
+        private void btnSeleccionar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

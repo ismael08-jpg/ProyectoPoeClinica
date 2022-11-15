@@ -7,115 +7,85 @@
       xmlns:local="clr-namespace:ProyectoPoeClinica.Vistas"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="FrmCita" GotFocus="Page_GotFocus" MouseDown="Page_MouseDown">
+      Title="FrmCita">
     <Grid>
         <materialDesign:Card Padding="32" Margin="16">
             <TextBlock x:Name="titulo" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">Agendar Nueva Consulta</TextBlock>
         </materialDesign:Card>
 
-        <Grid Width="680" Height="auto
-" VerticalAlignment="Top" Margin="0,70">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="center" Height="auto">
-                <StackPanel VerticalAlignment="Center" Margin="40,33,40,10" Width="311" Height="197">
-                    <DatePicker x:Name="dateFechaCita"
+        <Grid Width="680" Height="378" VerticalAlignment="Top" Margin="60,50,60,0">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="center" Height="auto">
+                    <StackPanel VerticalAlignment="Center" Margin="40,33,40,0" Width="311" Height="197">
+                        <DatePicker x:Name="dateFechaCita"
                                 Margin="0,5,0,5"
                                 FontSize="18" 
                                 Height="40"
                                 materialDesign:HintAssist.Hint="Fecha para Consulta"
                                 FontFamily="Champagne &amp; Limousines"
-                                Style="{StaticResource MaterialDesignDatePicker}"/>
-                    <TextBox  Name="txt" 
+                                Style="{StaticResource MaterialDesignDatePicker}"
+                                />
+                        <TextBox  Name="txtNCosnultorio" 
                               Margin="0,5,0,5"
                               FontFamily="Champagne &amp; Limousines"
+                              MaxLength="3"
                               FontSize="18" 
+                             
                               materialDesign:HintAssist.Hint="Número de Consultorio"
                               Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                    <TextBox  Name="txtDiagnostico"
-                              MaxLength="11"
-                              Margin="0,5,0,5"
-                              TextWrapping="Wrap"
-                              FontSize="18" 
-                               VerticalScrollBarVisibility="Visible"
-                              materialDesign:HintAssist.Hint="Diagnostico"
-                              FontFamily="Champagne &amp; Limousines"
-                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
 
-                </StackPanel>
-                <StackPanel VerticalAlignment="Center" Margin="5,39" Width="311">
-                    <TextBox  Name="txtPasiente"
+                        <ComboBox
+                            Name="comboTipoConsulta"
+                            Margin="0,5,0,5"
+                            FontFamily="Champagne &amp; Limousines"
+                            FontSize="18" 
+                            materialDesign:HintAssist.Hint="Tipo de consulta"
+                            materialDesign:HintAssist.IsFloating="True"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            ItemsSource="{Binding Path=Tipo_Cita1}"
+                            DisplayMemberPath="Tipo_Cita1"
+                            SelectedValuePath="ID"
+                            SelectedValue="{Binding Path=ID}">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center" Margin="5,39" Width="311">
+                        <TextBox  Name="txtPasiente"
                               Margin="0,5,0,5"
-                              FontSize="18"                           
+                              FontSize="18"
+                              IsReadOnly="True"
                               materialDesign:HintAssist.Hint="Pasiente"
                               FontFamily="Champagne &amp; Limousines"
                               Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                    <TextBox  Name="txtMedico"
+                        <TextBox  Name="txtMedico"
                               Margin="0,5,0,5"
-                              FontSize="18"                           
+                              FontSize="18"
+                              IsReadOnly="True"
                               materialDesign:HintAssist.Hint="Médico"
                               FontFamily="Champagne &amp; Limousines"
                               Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <Button Margin="0,5,0,5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Name="btnSeleccionarMedico" Click="btnSeleccionarMedico_Click"  >Seleccionar Médico</Button>
+                        <Button Margin="0,5,0,5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Name="btnSeleccionarMedico" Click="btnSeleccionarMedico_Click"  >Seleccionar Médico</Button>
 
-                    <ComboBox
-                        Name="comboTipoConsulta"
-                        Margin="0,5,0,5"
-                        FontFamily="Champagne &amp; Limousines"
-                        FontSize="18" 
-                        materialDesign:HintAssist.Hint="Tipo de consulta"
-                        materialDesign:HintAssist.IsFloating="True"
-                        Style="{StaticResource MaterialDesignComboBox}"
-                        ItemsSource="{Binding Path=Tipo_Cita1}"
-                        DisplayMemberPath="Tipo_Cita1"
-                        SelectedValuePath="ID"
-                        SelectedValue="{Binding Path=Tipo_Cita1}">
-                        <!--<ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                        <ComboBoxItem IsSelected="False">ComboBox Item #2</ComboBoxItem>
-                        <ComboBoxItem>ComboBox Item #3</ComboBoxItem>-->
-                    </ComboBox>
-                    <!--<ComboBox
-                        Name="comboPaciente"
-                        Margin="0,5,0,5"
-                        FontFamily="Champagne &amp; Limousines"
-                        FontSize="18" 
-                        materialDesign:HintAssist.Hint="Paciente"
-                        materialDesign:HintAssist.IsFloating="True"
-                        Style="{StaticResource MaterialDesignComboBox}">
-                        <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                        <ComboBoxItem IsSelected="False">ComboBox Item #2</ComboBoxItem>
-                        <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
-                    </ComboBox>-->
-
-
-
-
-
-                    <!--<StackPanel Margin="0,5,0,5" Height="40" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock FontSize="18px" HorizontalAlignment="Center" VerticalAlignment="Center" >Sexo:</TextBlock>
-                        <RadioButton x:Name="radioHombre" 
-                                     Content="Hombre" 
-                                     GroupName="radioSexo"
-                                     FontSize="18" 
-                                     Margin="50,0,0,0"
-                                     FontFamily="Champagne &amp; Limousines"
-                                      Style="{StaticResource MaterialDesignAccentRadioButton}"
-                                     
-                                     />
-                        <RadioButton x:Name="radioMujer" 
-                                     Content="Mujer" 
-                                     GroupName="radioSexo"
-                                     FontSize="18"                                     
-                                     FontFamily="Champagne &amp; Limousines"
-                                     Style="{StaticResource MaterialDesignAccentRadioButton}"
-                                     Margin="50,0,0,0"
-                                     />
-                    </StackPanel>-->
+                        
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <TextBox  x:Name="txtDiagnostico"
+                              MaxLength="250"
+                              Margin="0,0,0,0"
+                              TextWrapping="Wrap"
+                              FontSize="18" 
+                              VerticalScrollBarVisibility="Visible"
+                              materialDesign:HintAssist.Hint="Diagnostico"
+                              FontFamily="Champagne &amp; Limousines"
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Height="auto" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedAccentButton}" Name="btnGuardar" Click="btnGuardar_Click"  >Guardar</Button>
+                    <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedDarkButton}"  x:Name="btnCancelar" Cursor="Hand" Click="btnCancelar_Click" Background="#FFA82D2D"  Content="Cancelar"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedAccentButton}" Name="btnGuardar"  >Guardar</Button>
-                <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedDarkButton}"  Name="btnCancelar" Cursor="Hand" Click="btnCancelar_Click"  >Cancelar</Button>
-            </StackPanel>
+            
         </Grid>
     </Grid>
 </Page>
