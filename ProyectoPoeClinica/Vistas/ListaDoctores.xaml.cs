@@ -33,13 +33,13 @@ namespace ProyectoPoeClinica.Vistas
             string miConexion = ConfigurationManager.ConnectionStrings["ProyectoPoeClinica.Properties.Settings.ClinicaConnectionString"].ConnectionString;
             miConexionSql = new SqlConnection(miConexion);
            // mostrarusuarios();
-          //mostrarDoctores();
+          mostrarDoctores();
         }
 
         
-      /* private void mostrarusuarios()
+     /* private void mostrarusuarios()
         {
-            string consulta = "select concat(Nombres, ' ', Apellidos) as Info from Usuarios where Puesto like '%Medico%' ";
+            string consulta = "select concat(Nombres, ' ', Apellidos,'', Nombre_Especialidad) as Info from Usuarios where Puesto like '%Medico%' ";
             SqlDataAdapter adaptadorSql = new SqlDataAdapter(consulta, miConexionSql);
             using(miConexionSql)
             {
@@ -50,21 +50,20 @@ namespace ProyectoPoeClinica.Vistas
                 listaDoctores.ItemsSource = usuariosTabla.DefaultView;
             }
         }*/
-       public void mostrarDoctores()
+        
+        public void mostrarDoctores()
         {
-            //List<EspecialidadViewModel> lst = new List<EspecialidadViewModel>();
-            using (Model.ClinicaEntities db = new Model.ClinicaEntities())
-            {
-                var lst = (from p in db.Usuarios
-                           select new Doctoresview
-                           {
-                               nombres = p.Nombres,
-                               apellidos = p.Apellidos
 
-                           }).ToList();
-                           
-                         
-                Dg.ItemsSource = lst;
+            string consulta = "SELECT*FROM DOCTORES";
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, miConexionSql);
+            using (adaptador)
+            {
+                DataTable doctores = new DataTable();
+                adaptador.Fill(doctores);
+                listaDoctores.DisplayMemberPath = "Nombre_Especilidad";
+                listaDoctores.SelectedValuePath = "ID";
+
+                listaDoctores.ItemsSource = doctores.DefaultView;
             }
 
             

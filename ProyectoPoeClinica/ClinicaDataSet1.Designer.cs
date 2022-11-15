@@ -20,9 +20,9 @@ namespace ProyectoPoeClinica {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ClinicaDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ClinicaDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ClinicaDataSet : global::System.Data.DataSet {
+    public partial class ClinicaDataSet1 : global::System.Data.DataSet {
         
         private CitaDataTable tableCita;
         
@@ -70,7 +70,7 @@ namespace ProyectoPoeClinica {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ClinicaDataSet() {
+        public ClinicaDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -81,7 +81,7 @@ namespace ProyectoPoeClinica {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected ClinicaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ClinicaDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -310,7 +310,7 @@ namespace ProyectoPoeClinica {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ClinicaDataSet cln = ((ClinicaDataSet)(base.Clone()));
+            ClinicaDataSet1 cln = ((ClinicaDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -490,9 +490,9 @@ namespace ProyectoPoeClinica {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ClinicaDataSet";
+            this.DataSetName = "ClinicaDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ClinicaDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ClinicaDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCita = new CitaDataTable();
@@ -640,7 +640,7 @@ namespace ProyectoPoeClinica {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ClinicaDataSet ds = new ClinicaDataSet();
+            ClinicaDataSet1 ds = new ClinicaDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1017,7 +1017,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1294,7 +1294,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1571,7 +1571,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1865,7 +1865,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2160,7 +2160,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2516,7 +2516,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2825,7 +2825,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3103,7 +3103,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3380,7 +3380,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3752,7 +3752,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4045,7 +4045,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4338,7 +4338,7 @@ namespace ProyectoPoeClinica {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ClinicaDataSet ds = new ClinicaDataSet();
+                ClinicaDataSet1 ds = new ClinicaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6225,7 +6225,7 @@ namespace ProyectoPoeClinica {
         }
     }
 }
-namespace ProyectoPoeClinica.ClinicaDataSetTableAdapters {
+namespace ProyectoPoeClinica.ClinicaDataSet1TableAdapters {
     
     
     /// <summary>
@@ -6434,7 +6434,7 @@ SELECT ID, Fecha_Cita, NConsultorio, Diagnostico, ID_Tipo_Cita, ID_Expediente, I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.CitaDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.CitaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6447,9 +6447,9 @@ SELECT ID, Fecha_Cita, NConsultorio, Diagnostico, ID_Tipo_Cita, ID_Expediente, I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.CitaDataTable GetData() {
+        public virtual ClinicaDataSet1.CitaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.CitaDataTable dataTable = new ClinicaDataSet.CitaDataTable();
+            ClinicaDataSet1.CitaDataTable dataTable = new ClinicaDataSet1.CitaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6457,14 +6457,14 @@ SELECT ID, Fecha_Cita, NConsultorio, Diagnostico, ID_Tipo_Cita, ID_Expediente, I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.CitaDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.CitaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Cita");
         }
         
@@ -6899,7 +6899,7 @@ SELECT ID, Nombre_Departamento FROM Departamentos WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.DepartamentosDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.DepartamentosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6912,9 +6912,9 @@ SELECT ID, Nombre_Departamento FROM Departamentos WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.DepartamentosDataTable GetData() {
+        public virtual ClinicaDataSet1.DepartamentosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.DepartamentosDataTable dataTable = new ClinicaDataSet.DepartamentosDataTable();
+            ClinicaDataSet1.DepartamentosDataTable dataTable = new ClinicaDataSet1.DepartamentosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6922,14 +6922,14 @@ SELECT ID, Nombre_Departamento FROM Departamentos WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.DepartamentosDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.DepartamentosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Departamentos");
         }
         
@@ -7224,7 +7224,7 @@ SELECT ID, Nombre_Especialidad FROM Especialidad WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.EspecialidadDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.EspecialidadDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7237,9 +7237,9 @@ SELECT ID, Nombre_Especialidad FROM Especialidad WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.EspecialidadDataTable GetData() {
+        public virtual ClinicaDataSet1.EspecialidadDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.EspecialidadDataTable dataTable = new ClinicaDataSet.EspecialidadDataTable();
+            ClinicaDataSet1.EspecialidadDataTable dataTable = new ClinicaDataSet1.EspecialidadDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7247,14 +7247,14 @@ SELECT ID, Nombre_Especialidad FROM Especialidad WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.EspecialidadDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.EspecialidadDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Especialidad");
         }
         
@@ -7554,7 +7554,7 @@ SELECT ID, ID_Paciente, Fecha FROM Expedientes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.ExpedientesDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.ExpedientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7567,9 +7567,9 @@ SELECT ID, ID_Paciente, Fecha FROM Expedientes WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.ExpedientesDataTable GetData() {
+        public virtual ClinicaDataSet1.ExpedientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.ExpedientesDataTable dataTable = new ClinicaDataSet.ExpedientesDataTable();
+            ClinicaDataSet1.ExpedientesDataTable dataTable = new ClinicaDataSet1.ExpedientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7577,14 +7577,14 @@ SELECT ID, ID_Paciente, Fecha FROM Expedientes WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.ExpedientesDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.ExpedientesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Expedientes");
         }
         
@@ -7886,7 +7886,7 @@ SELECT ID, ID_Especialida_Medicos, ID_Usuario FROM Medicos WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.MedicosDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.MedicosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7899,9 +7899,9 @@ SELECT ID, ID_Especialida_Medicos, ID_Usuario FROM Medicos WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.MedicosDataTable GetData() {
+        public virtual ClinicaDataSet1.MedicosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.MedicosDataTable dataTable = new ClinicaDataSet.MedicosDataTable();
+            ClinicaDataSet1.MedicosDataTable dataTable = new ClinicaDataSet1.MedicosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7909,14 +7909,14 @@ SELECT ID, ID_Especialida_Medicos, ID_Usuario FROM Medicos WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.MedicosDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.MedicosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Medicos");
         }
         
@@ -8218,7 +8218,7 @@ SELECT ID, Dui, Nombres, Apellidos, Direccion, Edad, ID_Departamento FROM Pacien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.PacientesDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.PacientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8231,9 +8231,9 @@ SELECT ID, Dui, Nombres, Apellidos, Direccion, Edad, ID_Departamento FROM Pacien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.PacientesDataTable GetData() {
+        public virtual ClinicaDataSet1.PacientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.PacientesDataTable dataTable = new ClinicaDataSet.PacientesDataTable();
+            ClinicaDataSet1.PacientesDataTable dataTable = new ClinicaDataSet1.PacientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8241,14 +8241,14 @@ SELECT ID, Dui, Nombres, Apellidos, Direccion, Edad, ID_Departamento FROM Pacien
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.PacientesDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.PacientesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Pacientes");
         }
         
@@ -8663,7 +8663,7 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.Receta_MedicaDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.Receta_MedicaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8676,9 +8676,9 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.Receta_MedicaDataTable GetData() {
+        public virtual ClinicaDataSet1.Receta_MedicaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.Receta_MedicaDataTable dataTable = new ClinicaDataSet.Receta_MedicaDataTable();
+            ClinicaDataSet1.Receta_MedicaDataTable dataTable = new ClinicaDataSet1.Receta_MedicaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8686,14 +8686,14 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.Receta_MedicaDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.Receta_MedicaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Receta_Medica");
         }
         
@@ -9041,7 +9041,7 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.RolDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.RolDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9054,9 +9054,9 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.RolDataTable GetData() {
+        public virtual ClinicaDataSet1.RolDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.RolDataTable dataTable = new ClinicaDataSet.RolDataTable();
+            ClinicaDataSet1.RolDataTable dataTable = new ClinicaDataSet1.RolDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9064,14 +9064,14 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.RolDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.RolDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Rol");
         }
         
@@ -9361,7 +9361,7 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.Tipo_CitaDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.Tipo_CitaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9374,9 +9374,9 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.Tipo_CitaDataTable GetData() {
+        public virtual ClinicaDataSet1.Tipo_CitaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.Tipo_CitaDataTable dataTable = new ClinicaDataSet.Tipo_CitaDataTable();
+            ClinicaDataSet1.Tipo_CitaDataTable dataTable = new ClinicaDataSet1.Tipo_CitaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9384,14 +9384,14 @@ SELECT ID, Receta, Estatus, ID_Cita FROM Receta_Medica WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.Tipo_CitaDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.Tipo_CitaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Tipo_Cita");
         }
         
@@ -9724,7 +9724,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.UsuariosDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9737,9 +9737,9 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.UsuariosDataTable GetData() {
+        public virtual ClinicaDataSet1.UsuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.UsuariosDataTable dataTable = new ClinicaDataSet.UsuariosDataTable();
+            ClinicaDataSet1.UsuariosDataTable dataTable = new ClinicaDataSet1.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9747,14 +9747,14 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet.UsuariosDataTable dataTable) {
+        public virtual int Update(ClinicaDataSet1.UsuariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ClinicaDataSet dataSet) {
+        public virtual int Update(ClinicaDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Usuarios");
         }
         
@@ -10185,7 +10185,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.doctoresDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.doctoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10198,9 +10198,9 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.doctoresDataTable GetData() {
+        public virtual ClinicaDataSet1.doctoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.doctoresDataTable dataTable = new ClinicaDataSet.doctoresDataTable();
+            ClinicaDataSet1.doctoresDataTable dataTable = new ClinicaDataSet1.doctoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10356,7 +10356,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ClinicaDataSet.viewDoctoresDataTable dataTable) {
+        public virtual int Fill(ClinicaDataSet1.viewDoctoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10369,9 +10369,9 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ClinicaDataSet.viewDoctoresDataTable GetData() {
+        public virtual ClinicaDataSet1.viewDoctoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ClinicaDataSet.viewDoctoresDataTable dataTable = new ClinicaDataSet.viewDoctoresDataTable();
+            ClinicaDataSet1.viewDoctoresDataTable dataTable = new ClinicaDataSet1.viewDoctoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10675,7 +10675,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(ClinicaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ClinicaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._departamentosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Departamentos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -10775,7 +10775,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(ClinicaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ClinicaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._departamentosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Departamentos.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -10865,7 +10865,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(ClinicaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ClinicaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._receta_MedicaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Receta_Medica.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -10979,7 +10979,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(ClinicaDataSet dataSet) {
+        public virtual int UpdateAll(ClinicaDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ClinicaDataSet" targetNamespace="http://tempuri.org/ClinicaDataSet.xsd" xmlns:mstns="http://tempuri.org/ClinicaDataSet.xsd" xmlns="http://tempuri.org/ClinicaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ClinicaDataSet1" targetNamespace="http://tempuri.org/ClinicaDataSet1.xsd" xmlns:mstns="http://tempuri.org/ClinicaDataSet1.xsd" xmlns="http://tempuri.org/ClinicaDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -666,7 +666,7 @@ SELECT ID, Nombres, Apellidos, Alias, Contra, Puesto, ID_Rol, ID_Especialidad FR
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ClinicaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ClinicaDataSet" msprop:Generator_UserDSName="ClinicaDataSet">
+  <xs:element name="ClinicaDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ClinicaDataSet1" msprop:Generator_UserDSName="ClinicaDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Cita" msprop:Generator_TableClassName="CitaDataTable" msprop:Generator_TableVarName="tableCita" msprop:Generator_TablePropName="Cita" msprop:Generator_RowDeletingName="CitaRowDeleting" msprop:Generator_RowChangingName="CitaRowChanging" msprop:Generator_RowEvHandlerName="CitaRowChangeEventHandler" msprop:Generator_RowDeletedName="CitaRowDeleted" msprop:Generator_UserTableName="Cita" msprop:Generator_RowChangedName="CitaRowChanged" msprop:Generator_RowEvArgName="CitaRowChangeEvent" msprop:Generator_RowClassName="CitaRow">
