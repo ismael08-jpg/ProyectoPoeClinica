@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity.Core.Objects;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace ProyectoPoeClinica.Vistas
 {
@@ -21,51 +24,49 @@ namespace ProyectoPoeClinica.Vistas
     /// </summary>
     public partial class ListaDoctores : Page
     {
-        Model.ClinicaEntities clinica = new Model.ClinicaEntities();
+      
         public ListaDoctores()
         {
             InitializeComponent();
-            refresh();
             
-        }
-        /* private void refresh()
-         {
-             List<DoctorViewModel> lst = new List<DoctorViewModel>();
-             using (Model.ClinicaEntities db = new Model.ClinicaEntities())
-             {
-                 lst = (from p1 in db.Usuarios
-                        where Puesto=='Medico'
-                        select new DoctorViewModel
-                        {
-                            //ID=p1.ID,
-                            Nombres=p1.Nombres,
-                            Apellidos=p1.Apellidos,
 
-                        }).ToList();
-             }
-             Dg.ItemsSource = lst;
-         }*/
-        private void refresh()
+            string miConexion = ConfigurationManager.ConnectionStrings["ProyectoPoeClinica.Properties.Settings.ClinicaConnectionString"].ConnectionString;
+            miConexionSql = new SqlConnection(miConexion);
+            mostrarusuarios();
+          //mostrarDoctores();
+        }
+
+        
+       private void mostrarusuarios()
         {
-            var query =
-            from usuario in clinica.Usuarios
-            where usuario.Puesto == "Medico"
-            orderby usuario.Rol
-            select new { usuario.Nombres, usuario.Apellidos, usuario.Puesto, usuario.Rol, usuario.ID };
-
-           Dg.ItemsSource = query.ToList();
+            string consulta = "select concat(Nombres, ' ', Apellidos) as Info from Usuarios where Puesto like '%Medico%' ";
+            SqlDataAdapter adaptadorSql = new SqlDataAdapter(consulta, miConexionSql);
+            using(miConexionSql)
+            {
+                DataTable usuariosTabla = new DataTable();
+                adaptadorSql.Fill(usuariosTabla);
+                listaDoctores.DisplayMemberPath = "Info";
+                listaDoctores.SelectedValuePath = "ID";
+                listaDoctores.ItemsSource = usuariosTabla.DefaultView;
+            }
         }
-
-        public class DoctorViewModel
+       /* private void mostrarDoctores()
         {
-            public int ID { get; set; }          
-            public string Nombres { get; set; }
-            public string Apellidos { get; set; }
-            public string Especialidad { get; set; }            
-            
-        }
-       
+            string consulta = "SELECT * FROM  MEDICOS D INNER JOIN USUARIOS U ON U.ID=DR.ID_Usuario" + "WHERE U.ID=@UsuarioID";
+            SqlCommand sqlComando = new SqlCommand(consulta, miConexionSql);
+            SqlDataAdapter adaptadorSql = new SqlDataAdapter(sqlComando);
+            using (adaptadorSql)
+            {
+                sqlComando.Parameters.AddWithValue("@UsuarioID", listaDoctores.SelectedValue);
+                DataTable doctoresTabla = new DataTable();
+                adaptadorSql.Fill(doctoresTabla);
+                listaDoctores.DisplayMemberPath = "ID_Especialidad_Medicos";
+                listaDoctores.SelectedValuePath = "ID";
+                listaDoctores.ItemsSource = doctoresTabla.DefaultView;
+            }
+        }*/
 
 
-        }
+        SqlConnection miConexionSql;
+    }
 }
