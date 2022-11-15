@@ -50,7 +50,7 @@ namespace ProyectoPoeClinica.Vistas
                 listaDoctores.ItemsSource = usuariosTabla.DefaultView;
             }
         }
-       /* private void mostrarDoctores()
+       /*private void mostrarDoctores()
         {
             string consulta = "SELECT * FROM  MEDICOS D INNER JOIN USUARIOS U ON U.ID=DR.ID_Usuario" + "WHERE U.ID=@UsuarioID";
             SqlCommand sqlComando = new SqlCommand(consulta, miConexionSql);
