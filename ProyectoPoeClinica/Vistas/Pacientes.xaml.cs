@@ -50,7 +50,6 @@ namespace ProyectoPoeClinica.Vistas
 
             // Instancia hacia obejeto que ese caso es Clase
             //List<PacientesView> lst = new List<PacientesView>();
-
             using (Model.ClinicaEntities3 DBs = new Model.ClinicaEntities3())
             {
                 var listado = (from d in DBs.Pacientes
@@ -87,8 +86,6 @@ namespace ProyectoPoeClinica.Vistas
                             px.Edad,
                             ex.FechaAfiliacion
                         }).ToList();
-
-
 
                 DTG.ItemsSource = listado;
 
@@ -190,22 +187,10 @@ namespace ProyectoPoeClinica.Vistas
                 }
 
 
-                /*if (((PacientesUpdateView)item).ID.Equals(id))
-                {
-                    hh.ID = ((PacientesUpdateView)item).ID;
-                    hh.NombresE = ((PacientesUpdateView)item).Nombres;
-                    hh.ApellidosE = ((PacientesUpdateView)item).Apellidos;
-                    hh.DuiE = ((PacientesUpdateView)item).Dui;
-                    hh.DirecccionE = ((PacientesUpdateView)item).Direccion;
-                    hh.EdadE = ((PacientesUpdateView)item).Edad;
-
-                    MainWindow.StaticMainFrame.Content = hh;
-
-                }*/
-
             }
         }
 
+        // Obteniedo Consulta de Paciente 
         private List<PacientesView> getByIdPaciente(int id)
         {
             List<PacientesView> lt = new List<PacientesView>();
@@ -232,6 +217,7 @@ namespace ProyectoPoeClinica.Vistas
             }
         }
 
+        // Obteniedno ultimo ID de Paciente para agragar un nuevo Expediente relacionado
         private int obtenerultimoID()
         {
             try
@@ -272,12 +258,6 @@ namespace ProyectoPoeClinica.Vistas
                     }
                 }
 
-
-
-
-                ///
-
-
             }
             catch (Exception ex)
             {
@@ -307,11 +287,15 @@ namespace ProyectoPoeClinica.Vistas
             }
         }
 
+
+        // Limpiar Datos
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
+
+         
         private void DTG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try

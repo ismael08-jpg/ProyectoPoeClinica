@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProyectoPoeClinica.Clases;
+using ProyectoPoeClinica.Model;
+using ProyectoPoeClinica.Vistas;
 
 
 namespace ProyectoPoeClinica
@@ -25,16 +28,66 @@ namespace ProyectoPoeClinica
             InitializeComponent();
         }
 
+        public int ID = 0;
+        ClinicaEntities3 contexto = new ClinicaEntities3();
+        // Variables de usuario
+        public String alias, conta;
+
 
         //Inision de Secion
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
-            // Instancia hacia Ventana Principal
-            MainWindow vp = new MainWindow();
-            //Mostrando Vnetana Principal
-            vp.Show();
-            //Ocultando Ventana Loging
-            this.Hide();
+            Usuarios loginUser = contexto.Usuarios.FirstOrDefault(x => x.Alias == TxbxAlias.Text
+            && x.Contra == TxbxContra.Password);
+
+            if (TxbxAlias.Text == "" && TxbxContra.Password == "")
+            {
+                MessageBox.Show("Ingrese Todos Los Campos");
+
+            }
+            else
+            {
+                if (TxbxAlias.Text == "")
+                {
+                    MessageBox.Show("Alias esta Vacio");
+                }
+                if (TxbxContra.Password == "")
+                {
+                    MessageBox.Show("Contra esta Vacio");
+                }
+                else
+                {
+                    if (loginUser != null)
+                        if (loginUser.Alias == TxbxAlias.Text && loginUser.Contra == TxbxContra.Password)
+                        {
+
+                            // Instancia hacia Ventana Principal
+                            MainWindow vp = new MainWindow();
+                            //Mostrando Vnetana Principal
+                            vp.Show();
+                            //Ocultando Ventana Loging
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario O Contraseña Erronea...");
+                            TxbxAlias.Text = "";
+                            TxbxContra.Password = "";
+                        }
+                    else
+                    {
+                        MessageBox.Show("Los datos ingresados son incorrectos", "Error de inicio de sesion", MessageBoxButton.OK, MessageBoxImage.Error);
+                        TxbxAlias.Text = "";
+                        TxbxContra.Password = "";
+                    }
+                }
+
+
+            }
+
+
+
+
         }
     }
 }
