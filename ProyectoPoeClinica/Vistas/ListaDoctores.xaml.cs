@@ -32,12 +32,12 @@ namespace ProyectoPoeClinica.Vistas
 
             string miConexion = ConfigurationManager.ConnectionStrings["ProyectoPoeClinica.Properties.Settings.ClinicaConnectionString"].ConnectionString;
             miConexionSql = new SqlConnection(miConexion);
-            mostrarusuarios();
+           // mostrarusuarios();
           //mostrarDoctores();
         }
 
         
-       private void mostrarusuarios()
+      /* private void mostrarusuarios()
         {
             string consulta = "select concat(Nombres, ' ', Apellidos) as Info from Usuarios where Puesto like '%Medico%' ";
             SqlDataAdapter adaptadorSql = new SqlDataAdapter(consulta, miConexionSql);
@@ -49,23 +49,36 @@ namespace ProyectoPoeClinica.Vistas
                 listaDoctores.SelectedValuePath = "ID";
                 listaDoctores.ItemsSource = usuariosTabla.DefaultView;
             }
-        }
-       /*private void mostrarDoctores()
-        {
-            string consulta = "SELECT * FROM  MEDICOS D INNER JOIN USUARIOS U ON U.ID=DR.ID_Usuario" + "WHERE U.ID=@UsuarioID";
-            SqlCommand sqlComando = new SqlCommand(consulta, miConexionSql);
-            SqlDataAdapter adaptadorSql = new SqlDataAdapter(sqlComando);
-            using (adaptadorSql)
-            {
-                sqlComando.Parameters.AddWithValue("@UsuarioID", listaDoctores.SelectedValue);
-                DataTable doctoresTabla = new DataTable();
-                adaptadorSql.Fill(doctoresTabla);
-                listaDoctores.DisplayMemberPath = "ID_Especialidad_Medicos";
-                listaDoctores.SelectedValuePath = "ID";
-                listaDoctores.ItemsSource = doctoresTabla.DefaultView;
-            }
         }*/
+       public void mostrarDoctores()
+        {
+            //List<EspecialidadViewModel> lst = new List<EspecialidadViewModel>();
+            using (Model.ClinicaEntities db = new Model.ClinicaEntities())
+            {
+                var lst = (from p in db.Usuarios
+                           select new Doctoresview
+                           {
+                               nombres = p.Nombres,
+                               apellidos = p.Apellidos
 
+                           }).ToList();
+                           
+                         
+                Dg.ItemsSource = lst;
+            }
+
+            
+        }
+        public class Doctoresview
+        {
+            public string nombres { get; set; }
+            public string apellidos { get; set; }
+        }
+
+        public class Especialidadview
+        {
+            public string especiliadad { get; set; }
+        }
 
         SqlConnection miConexionSql;
     }

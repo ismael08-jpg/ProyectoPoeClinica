@@ -9,8 +9,40 @@
       Title="ListaDoctores">
 
     <Grid Background="#FFF9EEEE">
-        <ListBox Name="listaDoctores" Background="Aqua" HorizontalAlignment="Left" Height="218" Margin="225,115,0,0" VerticalAlignment="Top" Width="386"/>
-        <Label Content="Doctores" HorizontalAlignment="Left" Margin="244,28,0,0" VerticalAlignment="Top" Height="54" Width="194" FontWeight="Bold" FontSize="22"/>
+        <Grid Width="auto" VerticalAlignment="Top" Margin="10,96,224,0">
+            <DataGrid Name="Dg" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,-27,-10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre Del doctor" Binding="{Binding Nombres}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Apellidos Del doctor" Binding="{Binding Apellidos}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Es´pecialidad" Binding="{Binding Nombre_Especialidad}" ></DataGridTextColumn>
+
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
     </Grid>
 </Page>
