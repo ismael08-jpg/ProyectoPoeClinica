@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProyectoPoeClinica.Clases;
 
 namespace ProyectoPoeClinica.Vistas
 {
@@ -23,6 +24,40 @@ namespace ProyectoPoeClinica.Vistas
         public ListaConsultas()
         {
             InitializeComponent();
+            refresh();
+        }
+
+        private void refresh()
+        {
+            List<Citas> lst = new List<Citas>();
+            using (Model.ClinicaEntities db = new Model.ClinicaEntities())
+            {
+                lst = (from c in db.Cita
+                       select new Citas
+                       {
+                           ID = c.ID,
+                           Fecha_Cita = c.Fecha_Cita,
+                           NConsultorio = c.NConsultorio,
+                           Diagnostico = c.Diagnostico,
+                           ID_Tipo_Cita = c.ID_Tipo_Cita,
+                           ID_Expediente = c.ID_Expediente,
+                           ID_Medico = c.ID_Medico,
+                           
+
+                           nombres_medico = c.Medicos.Usuarios.Nombres + " " + c.Medicos.Usuarios.Apellidos,
+                           tipo_cita = c.Tipo_Cita.Tipo_Cita1,
+                           nombres_paciente = c.Expedientes.Pacientes.Nombres + " " + c.Expedientes.Pacientes.Apellidos
+
+
+                       }).ToList();
+            }
+
+            Dg.ItemsSource = lst;
+        }
+
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.StaticMainFrame.Content = new SeleccionarPaciente();
         }
     }
 }

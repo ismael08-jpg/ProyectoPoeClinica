@@ -21,10 +21,12 @@ namespace ProyectoPoeClinica
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame StaticMainFrame;
         public MainWindow()
         {
             InitializeComponent();
-            //MainFrame.Content = new Home();
+            MainFrame.Content = new Home();
+            StaticMainFrame = MainFrame;
         }
 
         //Abre la vista de consultas

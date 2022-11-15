@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProyectoPoeClinica.Clases;
 
 
 namespace ProyectoPoeClinica
@@ -35,6 +36,10 @@ namespace ProyectoPoeClinica
             vp.Show();
             //Ocultando Ventana Loging
             this.Hide();
+
+            GlovalEntries.idUSer = 1;
+            GlovalEntries.role = 1;
+            GlovalEntries.nombre = "Ismael";
         }
     }
 }
