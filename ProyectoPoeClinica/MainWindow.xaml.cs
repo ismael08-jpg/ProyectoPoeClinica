@@ -26,8 +26,6 @@ namespace ProyectoPoeClinica
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Home();
-            StaticMainFrame = MainFrame;
         }
 
         //Abre la vista de consultas
@@ -46,10 +44,11 @@ namespace ProyectoPoeClinica
         {
             MainFrame.Content = new Home();
         }
+       
 
         private void btnDoctores_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainFrame.Content = new ListaDoctores();
         }
 
         private void btnPacientes_Click(object sender, RoutedEventArgs e)

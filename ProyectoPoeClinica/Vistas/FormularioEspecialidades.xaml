@@ -1,0 +1,40 @@
+﻿<Page x:Class="ProyectoPoeClinica.Vistas.FormularioEspecialidades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoPoeClinica.Vistas"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="600"
+      Title="FormularioEspecialidades">
+
+    <Grid Background="#FFF9EEEE" Margin="0,-23,0,0">
+        <Label  Content="Ingrese los datos solicitados" Margin="198,10,133,169" FontWeight="Bold" FontSize="20"/>
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="center" Height="auto" Margin="45,27,45,21">
+            <TextBox  Name="txtIdEspecialidad" 
+                              Margin="0,50,0,73"
+                              FontFamily="Arial Black"
+                              FontSize="18" 
+                              materialDesign:HintAssist.Hint="ID de especialidad"
+                              Width="250" Height="80"
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontWeight="Bold" Background="#FFF3F9F9" 
+                              ></TextBox>
+            
+            <TextBox  Name="txtNombreEspecialidad" 
+                              Margin="10,50,0,73"
+                              FontFamily="Arial Black"
+                              FontSize="18" 
+                              materialDesign:HintAssist.Hint="Nombre Especialidad"
+                              Width="250" Height="80"
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontWeight="Bold" Background="#FFF3F9F9" 
+                              ></TextBox>
+        </StackPanel>
+        <StackPanel  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,21" Width="250">
+            <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedAccentButton}" 
+                        Name="btnGuardar" Click="btnGuardar_Click" Width="100" >Guardar</Button>
+            <Button Margin="5,7,5,6" Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                        Name="btnCancelar" Click="btnCancelar_Click" Width="100"  >Cancelar</Button>
+        </StackPanel>
+    </Grid>
+</Page>
