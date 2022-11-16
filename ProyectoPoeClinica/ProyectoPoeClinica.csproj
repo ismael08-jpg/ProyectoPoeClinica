@@ -98,8 +98,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clases\Citas.cs" />
+    <Compile Include="Clases\MedicoSelectedEventArgs.cs" />
     <Compile Include="Clases\PacientesView.cs" />
+    <Compile Include="Clases\TipoCita.cs" />
+    <Compile Include="Clases\UsuarioModel.cs" />
     <Compile Include="Clases\Usuarios.cs" />
+    <Compile Include="GlovalEntries.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -142,14 +147,14 @@
     <Compile Include="Model\Rol.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Tipo_Cita.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Usuarios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmCita.xaml.cs">
+      <DependentUpon>FrmCita.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -162,6 +167,12 @@
     </Compile>
     <Compile Include="Vistas\Pacientes.xaml.cs">
       <DependentUpon>Pacientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\SeleccionarDoctorCita.xaml.cs">
+      <DependentUpon>SeleccionarDoctorCita.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\SeleccionarPaciente.xaml.cs">
+      <DependentUpon>SeleccionarPaciente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VEmerEditarPaciente.xaml.cs">
       <DependentUpon>VEmerEditarPaciente.xaml</DependentUpon>
@@ -182,6 +193,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\FrmCita.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +210,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Pacientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\SeleccionarDoctorCita.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\SeleccionarPaciente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
