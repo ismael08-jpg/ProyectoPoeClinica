@@ -34,7 +34,7 @@ namespace ProyectoPoeClinica.Vistas
                        select new EspecialidadViewModel
                        {
                            ID = p.ID,
-                           Nombre_Espe=p.Nombre_Especialidad,
+                           Nombre_Especialidad=p.Nombre_Especialidad,
 
                        }).ToList();
             }
@@ -44,7 +44,7 @@ namespace ProyectoPoeClinica.Vistas
         public class EspecialidadViewModel
         {
             public int ID { get; set; }
-            public string Nombre_Espe { get; set; }
+            public string Nombre_Especialidad { get; set; }
         }
         private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
