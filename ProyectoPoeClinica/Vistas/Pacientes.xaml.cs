@@ -72,7 +72,6 @@ namespace ProyectoPoeClinica.Vistas
                              FechaAfiliacion = x.Fecha.ToString(),
                              ID_Paciente = x.ID_Paciente
 
-
                          }),
                         px => px.ID,
                         ex => ex.ID_Paciente,

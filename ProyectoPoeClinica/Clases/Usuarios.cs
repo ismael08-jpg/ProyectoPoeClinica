@@ -36,5 +36,12 @@ namespace ProyectoPoeClinica.Clases
         public String Tipo_Rol { get; set; }
     }
 
+    class EspecialidadView
+    {
+        public int ID_Especialidad { get; set; }
+        public String Nombre_Especialidades { get; set; }
+
+    }
+
 
 }

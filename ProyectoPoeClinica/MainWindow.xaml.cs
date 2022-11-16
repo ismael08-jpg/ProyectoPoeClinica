@@ -50,7 +50,7 @@ namespace ProyectoPoeClinica
 
         private void btnDoctores_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainFrame.Content = new Doctores();
         }
 
         private void btnPacientes_Click(object sender, RoutedEventArgs e)

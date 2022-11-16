@@ -8,12 +8,12 @@
    
       xmlns:local="clr-namespace:ProyectoPoeClinica.Vistas"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1000"
+      d:DesignHeight="800" d:DesignWidth="1150"
       Title="Pacientes">
 
     <Grid>
 
-        <GroupBox Header="Expediente Paciente" HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="1000">
+        <GroupBox Header="Expediente Paciente" HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="1062">
             <Grid>
                 <TextBox   x:Name="TxbxNombres" HorizontalAlignment="Left" Height="34" Margin="60,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="White"/>
                 <TextBox  x:Name="TxbxApellidos" HorizontalAlignment="Left" Height="34" Margin="286,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Background="White"/>
@@ -32,13 +32,13 @@
                 </Label>
             </Grid>
         </GroupBox>
-        
-        
+
+
         <Grid>
-        <Label Content="Fecha Afiliacion: " HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="1.722,0.517" Margin="796,192,0,0"/>
-        <Image HorizontalAlignment="Left" Height="136" Margin="796,51,0,0" VerticalAlignment="Top" Width="148" Source="/ProyectoPoeClinica;component/Imagen/ficha.png"/>
-        <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="796,226,0,0" VerticalAlignment="Top" Width="182" Height="31" Background="White"/>
-        <Image HorizontalAlignment="Left" Height="49" Margin="0,294,0,0" VerticalAlignment="Top" Width="1000" Source="/ProyectoPoeClinica;component/Imagen/cardio.PNG" Stretch="Fill"/>
+            <Label Content="Fecha Afiliacion: " HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" RenderTransformOrigin="1.722,0.517" Margin="796,192,0,0"/>
+            <Image HorizontalAlignment="Left" Height="136" Margin="796,51,0,0" VerticalAlignment="Top" Width="148" Source="/ProyectoPoeClinica;component/Imagen/ficha.png"/>
+            <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="796,226,0,0" VerticalAlignment="Top" Width="182" Height="31" Background="White"/>
+            <Image HorizontalAlignment="Left" Height="49" Margin="0,294,0,0" VerticalAlignment="Top" Width="1000" Source="/ProyectoPoeClinica;component/Imagen/cardio.PNG" Stretch="Fill"/>
             <Button x:Name="BtnAfiliar" Content="Afiliar" HorizontalAlignment="Left" Margin="740,289,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="2.533,0.656" Height="38" Click="BtnAfiliar_Click"/>
             <TextBox HorizontalAlignment="Left" Height="31" Margin="82,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416"  materialDesign:HintAssist.Hint="Buscar Paciente" />
             <Button Content="Imprimir" HorizontalAlignment="Left" Margin="740,369,0,0" VerticalAlignment="Top" Width="102"/>
@@ -47,7 +47,7 @@
             <Button Content="Nuevo" HorizontalAlignment="Left" Margin="871,289,0,0" VerticalAlignment="Top" Width="98" Height="38" RenderTransformOrigin="0.439,0.265" Click="Button_Click_2"/>
         </Grid>
 
-        <DataGrid Name="DTG" Width="925" Height="370" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0" Margin="34,420,41,10" MouseDoubleClick="DTG_MouseDoubleClick">
+        <DataGrid Name="DTG" Height="370" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0" Margin="50,420,88,10" MouseDoubleClick="DTG_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="  Dui" Binding="{Binding Dui}"></DataGridTextColumn>
@@ -63,20 +63,20 @@
                         <DataTemplate>
                             <StackPanel>
                                 <Button CommandParameter="{Binding ID}" Click="Button_Click">Editar</Button>
-                                
+
                                 <Button CommandParameter="{Binding ID}" Click="Button_Click_1">Eliminar</Button>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
-                
+
+
             </DataGrid.Columns>
         </DataGrid>
 
 
-        <Grid >
-         
+        <Grid Margin="0,0,31,0" >
+
         </Grid>
 
 
