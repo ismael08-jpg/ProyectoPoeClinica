@@ -26,19 +26,33 @@ namespace ProyectoPoeClinica.Vistas
             refresh();
         }
 
-        private void refresh()
+        private void refresh(string nombre = "")
         {
             List<Paciente> lst = new List<Paciente>();
             using (Model.ClinicaEntities db = new Model.ClinicaEntities())
             {
-                lst = (from p in db.Pacientes
-                       select new Paciente
-                       {
-                           ID = p.ID,
-                           Dui = p.Dui,
-                           Nombres = p.Nombres,
-                           Apellidos = p.Apellidos,
-                       }).ToList();
+                if(nombre != "")
+                {
+                    lst = (from p in db.Pacientes
+                           where p.Nombres.Contains(nombre) || p.Apellidos.Contains(nombre)
+                           select new Paciente
+                           {
+                               ID = p.ID,
+                               Dui = p.Dui,
+                               Nombres = p.Nombres,
+                               Apellidos = p.Apellidos,
+                           }).ToList();
+                } else
+                {
+                    lst = (from p in db.Pacientes
+                           select new Paciente
+                           {
+                               ID = p.ID,
+                               Dui = p.Dui,
+                               Nombres = p.Nombres,
+                               Apellidos = p.Apellidos,
+                           }).ToList();
+                }
             }
 
             Dg.ItemsSource = lst;
@@ -58,6 +72,11 @@ namespace ProyectoPoeClinica.Vistas
             int id = (int)((Button)sender).CommandParameter;
             FrmCita frmCita = new FrmCita(0, id);
             MainWindow.StaticMainFrame.Content = frmCita;
+        }
+
+        private void txtPaciente_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            refresh(txtPaciente.Text);
         }
     }
 }

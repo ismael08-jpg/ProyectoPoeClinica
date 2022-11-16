@@ -28,6 +28,7 @@ namespace ProyectoPoeClinica.Vistas
 
         Model.Pacientes paciente = new Model.Pacientes();
         Medicos medico = new Medicos();
+        Expedientes expediente = new Expedientes();
 
         public FrmCita(int id = 0, int id_paciente = 0, string mode = "create")
         {
@@ -47,6 +48,7 @@ namespace ProyectoPoeClinica.Vistas
 
 
 
+            llenarTipoConsulta();
 
             //Cuando se reciba el parametro vamos a editar
             if (id != 0)
@@ -55,7 +57,6 @@ namespace ProyectoPoeClinica.Vistas
                 setEditMode(id);
             }
 
-            llenarTipoConsulta();
         }
         
         
@@ -70,6 +71,7 @@ namespace ProyectoPoeClinica.Vistas
 
                 paciente = cita.Expedientes.Pacientes;
                 medico = cita.Medicos;
+                expediente =  db.Expedientes.FirstOrDefault(x => x.ID == cita.Expedientes.ID);
 
                 dateFechaCita.Text = cita.Fecha_Cita.ToString();
                 txtNCosnultorio.Text = cita.NConsultorio.ToString();
@@ -95,13 +97,15 @@ namespace ProyectoPoeClinica.Vistas
                 txtPasiente.Text = paciente.Nombres + " " + paciente.Apellidos;
 
                 //Si no posee cuadro se lo creamos
-                if (paciente.Expedientes.Count() == 0)
+                if (paciente.Expedientes.Count() <= 0)
                 {
                     Expedientes expedientes = new Expedientes();
                     expedientes.ID_Paciente = paciente.ID;
                     expedientes.Fecha = DateTime.Now;
 
-                    paciente = db.Pacientes.FirstOrDefault(x => x.ID == id);
+                    db.Expedientes.Add(expedientes);
+                    db.SaveChanges();
+                    paciente = db.Pacientes.FirstOrDefault(x => x.ID == id_paciente2);
                 }
             }
         }
@@ -119,27 +123,30 @@ namespace ProyectoPoeClinica.Vistas
                 comboTipoConsulta.ItemsSource = clientes;
                 comboTipoConsulta.DisplayMemberPath = "Tipo_Cita1";
                 comboTipoConsulta.SelectedValuePath = "ID";
+                comboTipoConsulta.SelectedIndex = 1;
                 
-                if(mode == "edit")
-                {
-                    var cita = db.Cita.Find(this.id);
 
-                    comboTipoConsulta.SelectedItem = cita.Tipo_Cita.Tipo_Cita1;
+
+                if(true)
+                {
+                    //var cita = db.Cita.Find(this.id);
+
+                    //comboTipoConsulta.SelectedValue = cita.Tipo_Cita.ID.ToString();
                 }
                     
             }
         }
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if(dateFechaCita.Text != "" && txtNCosnultorio.Text != "" 
-                && comboTipoConsulta.SelectedValue.ToString() != "" && medico.ID_Usuario != 0)
+            if(dateFechaCita.Text != "" && txtNCosnultorio.Text != "" && medico.ID_Usuario != 0)
             {
+
 
                 try
                 {
                     using (ClinicaEntities db = new ClinicaEntities())
                     {
-                        Cita cita = mode == "edit" ? new Cita()
+                        Cita cita = mode == "create" ? new Cita()
                         : db.Cita.Find(id);
 
                         cita.Fecha_Cita = DateTime.Parse(dateFechaCita.Text);
@@ -150,7 +157,7 @@ namespace ProyectoPoeClinica.Vistas
 
 
                         cita.ID_Tipo_Cita = int.Parse(comboTipoConsulta.SelectedValue.ToString());
-                        cita.ID_Expediente = paciente.Expedientes.First().ID;
+                        cita.ID_Expediente = mode == "create" ? paciente.Expedientes.First().ID : expediente.ID;
                         cita.ID_Medico = medico.ID;
 
 

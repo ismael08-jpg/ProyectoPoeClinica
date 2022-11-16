@@ -37,14 +37,13 @@
                         <ComboBox
                             Name="comboTipoConsulta"
                             Margin="0,5,0,5"
+                            materialDesign:ColorZoneAssist.Mode="Standard"
                             FontFamily="Champagne &amp; Limousines"
                             FontSize="18" 
                             materialDesign:HintAssist.Hint="Tipo de consulta"
                             materialDesign:HintAssist.IsFloating="True"
                             Style="{StaticResource MaterialDesignComboBox}"
-                            ItemsSource="{Binding Path=Tipo_Cita1}"
                             DisplayMemberPath="Tipo_Cita1"
-                            SelectedValuePath="ID"
                             SelectedValue="{Binding Path=ID}">
                         </ComboBox>
                     </StackPanel>

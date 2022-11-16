@@ -27,29 +27,57 @@ namespace ProyectoPoeClinica.Vistas
             refresh();
         }
 
-        private void refresh()
+        private void refresh(string nombre_paciente = "")
         {
             List<Citas> lst = new List<Citas>();
             using (Model.ClinicaEntities db = new Model.ClinicaEntities())
             {
-                lst = (from c in db.Cita
-                       select new Citas
-                       {
-                           ID = c.ID,
-                           Fecha_Cita = c.Fecha_Cita,
-                           NConsultorio = c.NConsultorio,
-                           Diagnostico = c.Diagnostico,
-                           ID_Tipo_Cita = c.ID_Tipo_Cita,
-                           ID_Expediente = c.ID_Expediente,
-                           ID_Medico = c.ID_Medico,
-                           
+                if(nombre_paciente != "")
+                {
+                     lst = (from c in db.Cita
+                                    where c.Expedientes.Pacientes.Nombres.Contains(nombre_paciente)
+                            //|| c.nombre.Contains(txtBuscar.Text)
+                            //|| c.username.Contains(txtBuscar.Text)
+                            select new Citas
+                            {
+                                ID = c.ID,
+                                Fecha_Cita = c.Fecha_Cita,
+                                NConsultorio = c.NConsultorio,
+                                Diagnostico = c.Diagnostico,
+                                ID_Tipo_Cita = c.ID_Tipo_Cita,
+                                ID_Expediente = c.ID_Expediente,
+                                ID_Medico = c.ID_Medico,
 
-                           nombres_medico = c.Medicos.Usuarios.Nombres + " " + c.Medicos.Usuarios.Apellidos,
-                           tipo_cita = c.Tipo_Cita.Tipo_Cita1,
-                           nombres_paciente = c.Expedientes.Pacientes.Nombres + " " + c.Expedientes.Pacientes.Apellidos
+
+                                nombres_medico = c.Medicos.Usuarios.Nombres + " " + c.Medicos.Usuarios.Apellidos,
+                                tipo_cita = c.Tipo_Cita.Tipo_Cita1,
+                                nombres_paciente = c.Expedientes.Pacientes.Nombres + " " + c.Expedientes.Pacientes.Apellidos
 
 
-                       }).ToList();
+                            }).ToList();
+
+
+                } else
+                {
+                    lst = (from c in db.Cita
+                           select new Citas
+                           {
+                               ID = c.ID,
+                               Fecha_Cita = c.Fecha_Cita,
+                               NConsultorio = c.NConsultorio,
+                               Diagnostico = c.Diagnostico,
+                               ID_Tipo_Cita = c.ID_Tipo_Cita,
+                               ID_Expediente = c.ID_Expediente,
+                               ID_Medico = c.ID_Medico,
+
+
+                               nombres_medico = c.Medicos.Usuarios.Nombres + " " + c.Medicos.Usuarios.Apellidos,
+                               tipo_cita = c.Tipo_Cita.Tipo_Cita1,
+                               nombres_paciente = c.Expedientes.Pacientes.Nombres + " " + c.Expedientes.Pacientes.Apellidos
+
+
+                           }).ToList();
+                }
             }
 
             Dg.ItemsSource = lst;
@@ -85,6 +113,21 @@ namespace ProyectoPoeClinica.Vistas
                 }
                 refresh();
             }
+        }
+
+        private void txtPaciente_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            filter();
+        }
+
+
+        private void filter()
+        {
+            string nombre_paciente = "";
+            if (txtPaciente.Text != "")
+                nombre_paciente = txtPaciente.Text;
+
+            refresh(nombre_paciente);
         }
     }
 }
