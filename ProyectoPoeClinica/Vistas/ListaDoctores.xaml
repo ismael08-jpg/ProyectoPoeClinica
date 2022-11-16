@@ -9,11 +9,14 @@
       Title="ListaDoctores">
 
     <Grid Background="#FFF9EEEE">
-
-        <DataGrid Name="Dg" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,-27,-10">
+        <TextBlock  VerticalAlignment="Top"  Style="{DynamicResource MaterialDesignHeadline6TextBlock}" 
+                        Margin="114,44,158,0" FontSize="24" FontFamily="Arial Rounded MT Bold">
+             Lista de Doctores</TextBlock>
+        <DataGrid Name="Dg" AutoGenerateColumns="False" IsReadOnly="True" Margin="10,200,10,10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Especialidades" Binding="{Binding Nombres}" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Nombre Especialidad" Binding="{Binding Nombre_Especialidad}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombres" Binding="{Binding nombres}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding apellidos}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombre Especialidad" Binding="{Binding especialidad}" ></DataGridTextColumn>
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
