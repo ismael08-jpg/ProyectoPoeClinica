@@ -28,13 +28,13 @@ namespace ProyectoPoeClinica.Vistas
          private void refresh()
         {
             List<EspecialidadViewModel> lst = new List<EspecialidadViewModel>();
-            using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+            using (Model.ClinicaEntities db = new Model.ClinicaEntities())
             {
                 lst = (from p in db.Especialidad
                        select new EspecialidadViewModel
                        {
-                           ID_Especialidades = p.ID_Especialidades,
-                           Nombre_Espe=p.Nombre_Espe,
+                           ID_Especialidades = p.ID,
+                           Nombre_Espe=p.Nombre_Especialidad,
 
                        }).ToList();
             }
@@ -58,7 +58,7 @@ namespace ProyectoPoeClinica.Vistas
                     MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 int id = (int)((Button)sender).CommandParameter;
-                using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+                using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                 {
                     var especilidades = db.Especialidad.Find(id);
                     db.Especialidad.Remove(especilidades);

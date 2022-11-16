@@ -29,11 +29,11 @@ namespace ProyectoPoeClinica.Vistas
             this.id = id;
             if(this.id!=0)
             {
-                using(Model.ClinicaEntities1 db= new Model.ClinicaEntities1())
+                using(Model.ClinicaEntities db= new Model.ClinicaEntities())
                 {
                     var especialidades = db.Especialidad.Find(this.id);
-                    txtIdEspecialidad.Text = especialidades.ID_Especialidades.ToString();
-                    txtNombreEspecialidad.Text = especialidades.Nombre_Espe.ToString();
+                    txtIdEspecialidad.Text = especialidades.ID.ToString();
+                    txtNombreEspecialidad.Text = especialidades.Nombre_Especialidad.ToString();
                 }
             }
 
@@ -42,11 +42,11 @@ namespace ProyectoPoeClinica.Vistas
         {
             if (id == 0)
             {
-                using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+                using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                 {
                     var especialidad = id == 0 ? new Model.Especialidad() : db.Especialidad.Find(id);
-                    especialidad.ID_Especialidades = int.Parse(txtIdEspecialidad.Text);
-                    especialidad.Nombre_Espe = txtNombreEspecialidad.Text;
+                    especialidad.ID = int.Parse(txtIdEspecialidad.Text);
+                    especialidad.Nombre_Especialidad = txtNombreEspecialidad.Text;
 
                     db.Especialidad.Add(especialidad);
                     db.SaveChanges();
@@ -55,12 +55,12 @@ namespace ProyectoPoeClinica.Vistas
             }
             else
             {
-                using (Model.ClinicaEntities1 db = new Model.ClinicaEntities1())
+                using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                 {
 
                     var especialidad = id == 0 ? new Model.Especialidad() : db.Especialidad.Find(id);
-                    especialidad.ID_Especialidades = int.Parse(txtIdEspecialidad.Text);
-                    especialidad.Nombre_Espe = txtNombreEspecialidad.Text;
+                    especialidad.ID = int.Parse(txtIdEspecialidad.Text);
+                    especialidad.Nombre_Especialidad = txtNombreEspecialidad.Text;
 
                     db.Entry(especialidad).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
