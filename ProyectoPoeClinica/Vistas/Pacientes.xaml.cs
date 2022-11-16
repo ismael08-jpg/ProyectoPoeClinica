@@ -50,7 +50,7 @@ namespace ProyectoPoeClinica.Vistas
 
             // Instancia hacia obejeto que ese caso es Clase
             //List<PacientesView> lst = new List<PacientesView>();
-            using (Model.ClinicaEntities3 DBs = new Model.ClinicaEntities3())
+            using (Model.ClinicaEntities DBs = new Model.ClinicaEntities())
             {
                 var listado = (from d in DBs.Pacientes
                           select new PacientesView
@@ -103,7 +103,7 @@ namespace ProyectoPoeClinica.Vistas
 
                 if (ID == 0)
                 {
-                    using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                    using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                     {
                         var Paciente = new Model.Pacientes();
                         Paciente.Dui = TxbxDui.Text;
@@ -124,7 +124,7 @@ namespace ProyectoPoeClinica.Vistas
                 }
                 else
                 {
-                    using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                    using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                     {
                         var Paciente = db.Pacientes.Find(ID);
                         Paciente.Dui = TxbxDui.Text;
@@ -196,7 +196,7 @@ namespace ProyectoPoeClinica.Vistas
             List<PacientesView> lt = new List<PacientesView>();
             try
             {
-                Model.ClinicaEntities3 DBs = new Model.ClinicaEntities3();
+                Model.ClinicaEntities DBs = new Model.ClinicaEntities();
 
                 lt = (from d in DBs.Pacientes
                           select new PacientesView
@@ -222,7 +222,7 @@ namespace ProyectoPoeClinica.Vistas
         {
             try
             {
-                Model.ClinicaEntities3 DBs = new Model.ClinicaEntities3();
+                Model.ClinicaEntities DBs = new Model.ClinicaEntities();
                 var lt = (from d in DBs.Pacientes
                           select new PacientesView
                           {
@@ -244,7 +244,7 @@ namespace ProyectoPoeClinica.Vistas
                 //
                 if (ID == 0)
                 {
-                    using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                    using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                     {
                         var expediente = new Model.Expedientes();
                         expediente.ID_Paciente = Id_Paciente;
@@ -270,7 +270,7 @@ namespace ProyectoPoeClinica.Vistas
             try
             {
                 int ID_Paciente = (int)((Button)sender).CommandParameter;
-                using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                 {
                     var pacientes = db.Pacientes.Find(ID_Paciente);
                     db.Pacientes.Remove(pacientes);

@@ -70,7 +70,7 @@ namespace ProyectoPoeClinica.Vistas
             {
                 if (ID == 0)
                 {
-                    using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                    using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                     {
 
                         var paciente = new Model.Pacientes();
@@ -89,7 +89,7 @@ namespace ProyectoPoeClinica.Vistas
                     }
                 } else
                 {
-                    using (Model.ClinicaEntities3 db = new Model.ClinicaEntities3())
+                    using (Model.ClinicaEntities db = new Model.ClinicaEntities())
                     { 
                         var Paciente = db.Pacientes.Find(ID);
                     

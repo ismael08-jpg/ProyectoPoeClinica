@@ -29,7 +29,7 @@ namespace ProyectoPoeClinica
         }
 
         public int ID = 0;
-        ClinicaEntities3 contexto = new ClinicaEntities3();
+        ClinicaEntities contexto = new ClinicaEntities();
         // Variables de usuario
         public String alias, conta;
 
