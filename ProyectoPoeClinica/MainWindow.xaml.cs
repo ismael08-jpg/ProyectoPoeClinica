@@ -21,12 +21,15 @@ namespace ProyectoPoeClinica
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public static Frame StaticMainFrame;
+
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Home();
             StaticMainFrame = MainFrame;
+            MainFrame.Content = new Home();
         }
 
         //Abre la vista de consultas
@@ -48,7 +51,7 @@ namespace ProyectoPoeClinica
 
         private void btnDoctores_Click(object sender, RoutedEventArgs e)
         {
-           
+            
         }
 
         private void btnPacientes_Click(object sender, RoutedEventArgs e)
